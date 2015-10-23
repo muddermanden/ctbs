@@ -107,7 +107,7 @@ public class Auditorium {
 		// draw the wall itself one char at a time
 		for(int i = 0; i < this.wallSize; i++) {
 			
-			// make then wall with the screen different than the rear wall
+			// make the wall with the screen different than the rear wall
 			if((i > 4 ^ i < this.numberOfSeatsInEachRow * 3) & hasScreen) {
 				System.out.print("=");
 			} else {
@@ -115,7 +115,8 @@ public class Auditorium {
 			}
 		}
 		
-		// if i
+		// if the method is invoked with hasScreen then append an extra newline
+		// in order to make space between the wall and the first row of seats
 		if (hasScreen)
 			System.out.println("+\n");
 		else
