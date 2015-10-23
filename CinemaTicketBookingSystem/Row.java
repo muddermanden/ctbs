@@ -1,0 +1,52 @@
+package CinemaTicketBookingSystem;
+
+import java.util.*;
+
+public class Row {
+	
+	private ArrayList<Seat> seats;
+	private int rowNumber;
+
+	
+	Row(int rowNumber) {
+		this.setRowNumber(rowNumber);
+		seats = new ArrayList<Seat>();
+	}
+	
+	
+	/**
+	 * Get the collection of seats in the row.
+	 * @return ArrayList of Seat objects.
+	 */
+	public ArrayList<Seat> getSeats() { return this.seats; }
+	
+	
+	/**
+	 * Get a specific seat by its seat number.
+	 * @param seatNumber as integer.
+	 * @return Seat object.
+	 * @throws SeatUnavailableException when seat number is not in the row.
+	 */
+	public Seat getSeat(int seatNumber) throws SeatUnavailableException { 
+		try {
+			return getSeats().get(seatNumber - 1); 
+		} catch (IndexOutOfBoundsException e) {
+			throw new SeatUnavailableException("Sorry, the seat does not exist.");
+		}
+	}
+	
+	
+	/**
+	 * Get a specific row by its row number.
+	 * @return Row object.
+	 */
+	public int getRowNumber() { return rowNumber; }
+	
+	
+	/**
+	 * 
+	 * @param rowNumber
+	 */
+	public void setRowNumber(int rowNumber) { this.rowNumber = rowNumber; }
+
+}
