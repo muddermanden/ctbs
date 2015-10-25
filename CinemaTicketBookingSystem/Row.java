@@ -25,13 +25,13 @@ public class Row {
 	 * Get a specific seat by its seat number.
 	 * @param seatNumber as integer.
 	 * @return Seat object.
-	 * @throws SeatUnavailableException when seat number is not in the row.
+	 * @throws WrongUserInputException when seat number is not in the row.
 	 */
-	public Seat getSeat(int seatNumber) throws SeatUnavailableException { 
+	public Seat getSeat(int seatNumber) throws WrongUserInputException { 
 		try {
 			return getSeats().get(seatNumber - 1); 
 		} catch (IndexOutOfBoundsException e) {
-			throw new SeatUnavailableException("Sorry, the seat does not exist.");
+			throw new WrongUserInputException("Sorry, the seat does not exist.");
 		}
 	}
 	

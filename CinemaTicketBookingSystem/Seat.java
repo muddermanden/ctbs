@@ -26,9 +26,9 @@ public class Seat {
 	}
 
 	
-	public void setIsBooked(boolean isBooked) throws SeatUnavailableException {
+	public void setIsBooked(boolean isBooked) throws WrongUserInputException {
 		if (this.isBooked) {
-			throw new SeatUnavailableException("Sorry, the seat is not available.");
+			throw new WrongUserInputException("Sorry, the seat is not available.");
 		} else {
 			this.isBooked = isBooked;
 		}
