@@ -3,15 +3,21 @@ package CinemaTicketBookingSystem;
 public class Movie {
 
 	private String title;
+	private int runtime;
 
-
-	Movie(String title) {
+	Movie(String title, int runtime) {
 		this.setTitle(title);
+		this.setRuntime(runtime);
 	}
 
 
-	public String getTitle() {
-		return this.title;
+	private void setRuntime(int runtime) {
+		this.runtime = runtime;
+	}
+	
+	
+	private int getRuntime() {
+		return this.runtime;
 	}
 
 
@@ -22,6 +28,6 @@ public class Movie {
 
 	@Override
 	public String toString() {
-		return title.toUpperCase();
+		return title.toUpperCase() + " (" + getRuntime() + " minutes)";
 	}
 }
