@@ -27,7 +27,7 @@ public class MovieSchedule {
 	private ArrayList<Presentation> presentations = new ArrayList<Presentation>();
 
 
-	// A private constructor restricts the use of new from outside the class
+	// A private constructor restricts the use of 'new' from outside the class
 	// itself
 	private MovieSchedule() {
 		// Exists only to defeat instantiation
