@@ -22,6 +22,6 @@ public class Movie {
 
 	@Override
 	public String toString() {
-		return title;
+		return title.toUpperCase();
 	}
 }
