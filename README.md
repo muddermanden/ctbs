@@ -1,5 +1,6 @@
 # ctbs
 
+```
 Movie Schedule:
  3) 2015-11-19 11:30 - Frække Frida
  1) 2015-11-20 15:30 - Terminator I
@@ -88,4 +89,4 @@ Name:	John Doe
 Phone:	555-0100
 Movie title: Frække Frida
 Presentation date: 2015-11-19 11:30
-Number of tickets: 2
+Number of tickets: 2 ```
