@@ -21,21 +21,19 @@ public class Presentation implements Comparable<Presentation> {
 
 
 	@Override
-	public int compareTo(Presentation o) {
-		if (getDatetime() == null || o.getDatetime() == null) return 0;
-		return getDatetime().compareTo(o.getDatetime());
+	public int compareTo(Presentation other) {
+		// check that both Presentation objects exists, if not return 0 (equal)
+		if (getDatetime() == null || other.getDatetime() == null) return 0;
+		
+		// compare the date/time of the Presentations
+		return getDatetime().compareTo(other.getDatetime());
 	}
 
 	
-	private int getNumberOfAvailableSeats() {
-		return getAuditorium().getNumberOfAvailableSeats();
-	}
-	
-
 	public Auditorium getAuditorium() {
 		return this.auditorium;
 	}
-
+	
 
 	public String getDatetime() {
 		return dateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
@@ -52,6 +50,11 @@ public class Presentation implements Comparable<Presentation> {
 	}
 
 
+	private int getNumberOfAvailableSeats() {
+		return getAuditorium().getNumberOfAvailableSeats();
+	}
+
+
 	public int getPresentationID() {
 		return presentationID;
 	}
@@ -64,6 +67,6 @@ public class Presentation implements Comparable<Presentation> {
 
 	@Override
 	public String toString() {
-		return String.format("%2d) %s - %s (%d available seats)", getPresentationID(), getDatetime(), getMovie(), getNumberOfAvailableSeats());
+		return String.format("%2d) %s - %-50s - %d seats left", getPresentationID(), getDatetime(), getMovie(), getNumberOfAvailableSeats());
 	}
 }
