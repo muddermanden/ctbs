@@ -4,9 +4,11 @@ public class Seat {
 
 	private boolean isBooked;
 	private int seatNumber;
+	private Row row;
 
 
-	Seat(int seatNumber) {
+	Seat(Row row, int seatNumber) {
+		setRow(row);
 		setSeatNumber(seatNumber);
 	}
 
@@ -24,8 +26,26 @@ public class Seat {
 		}
 	}
 
+	
+	private void setRow(Row row) {
+		this.row = row;
+	}
+	
+	
+	private Row getRow() {
+		return this.row;
+	}
+	
+	public int getRowNumber() {
+		return this.getRow().getRowNumber();
+	}
+	
 
 	private void setSeatNumber(int seatNumber) {
 		this.seatNumber = seatNumber;
+	}
+	
+	public int getSeatNumber() {
+		return this.seatNumber;
 	}
 }
