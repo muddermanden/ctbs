@@ -30,7 +30,15 @@ public class Auditorium {
 	 * @param rowNumber
 	 * @return
 	 */
-	private Row getRow(int rowNumber) { return getRows().get(rowNumber - 1); }
+	public Row getRow(int rowNumber) throws WrongUserInputException { 
+		try {
+			return getRows().get(rowNumber - 1);
+		}
+		catch (IndexOutOfBoundsException e) {
+			throw new WrongUserInputException("The row does not exist.");
+		}
+	
+	}
 	
 
 	/**
@@ -50,6 +58,8 @@ public class Auditorium {
 		
 		// mock data, already booked seats		
 		try {
+			
+			getRow(1).getSeat(1).setIsBooked(true);
 			getRow(5).getSeat(4).setIsBooked(true);
 			getRow(5).getSeat(5).setIsBooked(true);
 			getRow(10).getSeat(6).setIsBooked(true);
@@ -61,9 +71,8 @@ public class Auditorium {
 			getRow(7).getSeat(6).setIsBooked(true);
 			getRow(7).getSeat(7).setIsBooked(true);
 			getRow(7).getSeat(8).setIsBooked(true);
-			getRow(12).getSeat(12).setIsBooked(true);
 			
-		} catch (SeatUnavailableException e) {
+		} catch (WrongUserInputException e) {
 			// TODO Auto-generated catch block
 			e.printMessage();
 		}
@@ -123,6 +132,7 @@ public class Auditorium {
 		}
 	}
 	
+	
 	/**
 	 * Draw an ASCII representation of the auditorium.
 	 * @param hasScreen indicates whether a screen should be drawn as part of the wall
@@ -135,7 +145,7 @@ public class Auditorium {
 		for(int i = 0; i < this.wallSize; i++) {
 			
 			// if the wall has a screen; draw it from the first seat until the last seat
-			if((i < 4 || i > this.numberOfSeatsInEachRow * this.SEAT_CHARACTER_WIDTH) & hasScreen) {
+			if((i < 4 || i > this.numberOfSeatsInEachRow * this.SEAT_CHARACTER_WIDTH) && hasScreen) {
 				System.out.print("=");
 			} else {
 				System.out.print("-");
