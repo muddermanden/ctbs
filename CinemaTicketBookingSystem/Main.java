@@ -1,6 +1,5 @@
 package CinemaTicketBookingSystem;
 
-
 public class Main {
 
 	private static MovieSchedule movieSchedule;
@@ -14,17 +13,14 @@ public class Main {
 		// setup the application with mock data for demonstration purpose
 		Main.setupMockData();
 		
-		String[] menuList = {"View Movie Schedule", "View Auditorium Overview"};
-		menuLoop: do {
-			switch (Utility.displayMenu(menuList)) {
-			case 1: Main.movieSchedule.selectPresentationMenu();;
-					break;
-			case 2: Main.auditorium.displayAuditoriumOverview();
-					break;
-			case 0: System.out.println("Goodbye!");
-					break menuLoop;
-			}	
-		} while (true);
+		
+		Booking myBooking = new Booking();
+		myBooking.promptForPresentationSelection();
+		myBooking.promptForNumberOfSeats();
+		myBooking.getPresentation().getAuditorium().displayAuditoriumOverview();
+		myBooking.promptForSeatSelection();
+		myBooking.promptForCustomerInfo();
+		System.out.println(myBooking.displayBookingInformation());
 	}
 
 	public static void setupMockData() {
