@@ -1,20 +1,23 @@
 package CinemaTicketBookingSystem;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
 
 public class Booking {
 
 	private Customer customer;
 	private int numberOfSeats;
 	private Presentation presentation;
-	private HashMap<Row, Seat> seatsBooked;
+	private ArrayList<Seat> seatsBooked;
+	private boolean isConfirmed;
 
 
 	public Booking() {
 		customer = new Customer();
-		seatsBooked = new HashMap<Row, Seat>();
+		seatsBooked = new ArrayList<Seat>();
+		isConfirmed = false;
 	}
 
 
@@ -24,8 +27,8 @@ public class Booking {
 	 * @param seat
 	 *            is the seat that customer has selected
 	 */
-	private void addSeatToBooking(Row row, Seat seat) {
-		this.seatsBooked.put(row, seat);
+	private void addSeatToBooking(Seat seat) {
+		this.seatsBooked.add(seat);
 	}
 
 
@@ -33,10 +36,16 @@ public class Booking {
 		String bookingInfo = new String();
 
 		bookingInfo = String.format(
-				"#### BOOKING INFORMATION ####\n\n" + "Please confirm the details below\n" + "Name:\t%s\nPhone:\t%s\n"
-						+ "Movie title: %s\n" + "Presentation date: %s\n" + "Number of tickets: %d\n",
+				"#### BOOKING INFORMATION ####\n\n" + 
+				"Please confirm the booking details!\n" + 
+				"Name:             %s\n" + 
+				"Phone:            %s\n" + 
+				"Title:            %s\n" + 
+				"Date:             %s\n" + 
+				"Number of seats:  %d\n" +
+				"Seats booked:\n%s",
 				getCustomer().getName(), getCustomer().getPhoneNumber(), getPresentation().getMovieTitle(),
-				getPresentation().getDatetime(), getNumberOfSeats());
+				getPresentation().getDatetime(), getNumberOfSeats(), getSeatsBookedAsString());
 
 		System.out.println(bookingInfo);
 		return bookingInfo;
@@ -51,7 +60,7 @@ public class Booking {
 
 		movieSchedule.displayMovieSchedule();
 
-		input = promptUserInputInteger("Enter the number of the movie you will see :");
+		input = promptUserInputInteger("Enter the number of the presentation you will see:");
 
 		myPresentation = movieSchedule.matchPresentation(input);
 
@@ -75,11 +84,19 @@ public class Booking {
 	}
 
 
-	/**
-	 * @return the seatsBooked
-	 */
-	private HashMap<Row, Seat> getSeatsBooked() {
-		return seatsBooked;
+	private ArrayList<Seat> getSeatsBooked() {
+		return this.seatsBooked;
+	}
+	
+
+	private String getSeatsBookedAsString() {
+		String str = new String();
+		int i = 1;
+		for (Seat seat: getSeatsBooked()) {
+			str += String.format("  Ticket# %-2d: On row %2d, seat %2d\n", i, seat.getSeatNumber(), seat.getRowNumber());
+			i++;
+		}
+		return str;
 	}
 
 
@@ -123,7 +140,7 @@ public class Booking {
 				Seat mySeat = myRow.getSeat(mySeatNumber);
 				mySeat.isBooked(true);
 
-				addSeatToBooking(myRow, mySeat);
+				addSeatToBooking(mySeat);
 
 				getPresentation().getAuditorium().displayAuditoriumOverview();
 
@@ -170,15 +187,30 @@ public class Booking {
 			scanner = new Scanner(System.in);
 			userInput = scanner.nextLine();
 
-			if (userInput.length() > 3) {
+			if (userInput.length() > 0) {
 				return userInput;
 			} else {
-				System.out.println("Please enter a string of more than 3 characters.");
+				System.out.println("Please enter a string.");
 			}
 		} while (true);
 	}
+	
+	private void confirmBooking() {
+		char response = promptUserInputString("Type 'y' to confirm, or any key to cancel.").charAt(0);
+		if (response == 'y') {
+			isConfirmed(true);
+			System.out.println("Your booking is complete! :D");
+		} else {
+			System.exit(0);
+		}
+	}
 
 
+	private void isConfirmed(boolean confirm) {
+		this.isConfirmed = confirm;
+	}
+	
+	
 	private void setNumberOfSeats(int numberOfSeats) {
 		this.numberOfSeats = numberOfSeats;
 	}
@@ -196,6 +228,7 @@ public class Booking {
 		promptForSeatSelection();
 		promptForCustomerInfo();
 		displayBookingInformation();
+		confirmBooking();
 	}
 
 }
