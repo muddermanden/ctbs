@@ -1,5 +1,6 @@
 package CinemaTicketBookingSystem;
 
+import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -8,10 +9,23 @@ public class Booking {
 	private Customer customer;
 	private int numberOfSeats;
 	private Presentation presentation;
+	private HashMap<Row, Seat> seatsBooked;
 
 
 	public Booking() {
 		customer = new Customer();
+		seatsBooked = new HashMap<Row, Seat>();
+	}
+
+
+	/**
+	 * @param row
+	 *            is the row that customer has selected
+	 * @param seat
+	 *            is the seat that customer has selected
+	 */
+	private void addSeatToBooking(Row row, Seat seat) {
+		this.seatsBooked.put(row, seat);
 	}
 
 
@@ -37,7 +51,7 @@ public class Booking {
 
 		movieSchedule.displayMovieSchedule();
 
-		input = promptUserInputInteger("Enter choice :");
+		input = promptUserInputInteger("Enter the number of the movie you will see :");
 
 		myPresentation = movieSchedule.matchPresentation(input);
 
@@ -58,6 +72,14 @@ public class Booking {
 
 	private Presentation getPresentation() {
 		return this.presentation;
+	}
+
+
+	/**
+	 * @return the seatsBooked
+	 */
+	private HashMap<Row, Seat> getSeatsBooked() {
+		return seatsBooked;
 	}
 
 
@@ -94,11 +116,17 @@ public class Booking {
 		do {
 
 			try {
-				int myRow = promptUserInputInteger("Enter row number for ticket #" + i + ":");
-				getPresentation().getAuditorium().getRow(myRow);
-				int mySeat = promptUserInputInteger("Select seat number for ticket #" + i + ":");
-				getPresentation().getAuditorium().getRow(myRow).getSeat(mySeat).isBooked(true);
+				int myRowNumber = promptUserInputInteger("Enter row number for ticket #" + i + ":");
+				Row myRow = getPresentation().getAuditorium().getRow(myRowNumber);
+
+				int mySeatNumber = promptUserInputInteger("Select seat number for ticket #" + i + ":");
+				Seat mySeat = myRow.getSeat(mySeatNumber);
+				mySeat.isBooked(true);
+
+				addSeatToBooking(myRow, mySeat);
+
 				getPresentation().getAuditorium().displayAuditoriumOverview();
+
 			} catch (WrongUserInputException e) {
 				e.printMessage();
 				continue;
