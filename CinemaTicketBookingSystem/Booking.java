@@ -93,7 +93,7 @@ public class Booking {
 		String str = new String();
 		int i = 1;
 		for (Seat seat: getSeatsBooked()) {
-			str += String.format("  Ticket# %-2d: On row %2d, seat %2d\n", i, seat.getSeatNumber(), seat.getRowNumber());
+			str += String.format("  Ticket #%-2d: On row %2d, seat %2d\n", i, seat.getSeatNumber(), seat.getRowNumber());
 			i++;
 		}
 		return str;
@@ -164,7 +164,6 @@ public class Booking {
 				userInput = scanner.nextInt();
 
 				if (userInput > 0) {
-					// scanner.close();
 					return userInput;
 				} else {
 					System.out.println("Please enter a positive number.");
@@ -195,12 +194,20 @@ public class Booking {
 		} while (true);
 	}
 	
+	
 	private void confirmBooking() {
 		char response = promptUserInputString("Type 'y' to confirm, or any key to cancel.").charAt(0);
 		if (response == 'y') {
 			isConfirmed(true);
 			System.out.println("Your booking is complete! :D");
 		} else {
+			for(Seat seat: getSeatsBooked()) {
+				try {
+					seat.isBooked(false);
+				} catch (WrongUserInputException e) {
+					e.printMessage();
+				}
+			}
 			System.exit(0);
 		}
 	}
