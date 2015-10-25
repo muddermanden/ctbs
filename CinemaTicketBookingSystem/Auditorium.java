@@ -185,7 +185,7 @@ public class Auditorium {
 			currentRow = new Row(i);
 			rowsInAuditorium.add(currentRow);
 			for (int j = 1; j <= NUMBER_OF_SEATS_IN_EACH_ROW; j++) {
-				currentRow.getSeats().add(new Seat(j));
+				currentRow.getSeats().add(new Seat(currentRow, j));
 			}
 		}
 	}
