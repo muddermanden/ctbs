@@ -59,18 +59,18 @@ public class Auditorium {
 		// mock data, already booked seats		
 		try {
 			
-			getRow(1).getSeat(1).setIsBooked(true);
-			getRow(5).getSeat(4).setIsBooked(true);
-			getRow(5).getSeat(5).setIsBooked(true);
-			getRow(10).getSeat(6).setIsBooked(true);
-			getRow(10).getSeat(7).setIsBooked(true);
-			getRow(11).getSeat(3).setIsBooked(true);
-			getRow(11).getSeat(4).setIsBooked(true);
-			getRow(11).getSeat(5).setIsBooked(true);
-			getRow(7).getSeat(5).setIsBooked(true);
-			getRow(7).getSeat(6).setIsBooked(true);
-			getRow(7).getSeat(7).setIsBooked(true);
-			getRow(7).getSeat(8).setIsBooked(true);
+			getRow(1).getSeat(1).isBooked(true);
+			getRow(5).getSeat(4).isBooked(true);
+			getRow(5).getSeat(5).isBooked(true);
+			getRow(10).getSeat(6).isBooked(true);
+			getRow(10).getSeat(7).isBooked(true);
+			getRow(11).getSeat(3).isBooked(true);
+			getRow(11).getSeat(4).isBooked(true);
+			getRow(11).getSeat(5).isBooked(true);
+			getRow(7).getSeat(5).isBooked(true);
+			getRow(7).getSeat(6).isBooked(true);
+			getRow(7).getSeat(7).isBooked(true);
+			getRow(7).getSeat(8).isBooked(true);
 			
 		} catch (WrongUserInputException e) {
 			// TODO Auto-generated catch block
@@ -108,7 +108,7 @@ public class Auditorium {
 			
 			// show the seats based on booking status
 			for(Seat seat: row.getSeats()) {
-				if (seat.getIsBooked())
+				if (seat.isBooked())
 					System.out.print("[▓]");
 				else
 					System.out.print("[░]");
@@ -145,7 +145,7 @@ public class Auditorium {
 		for(int i = 0; i < this.wallSize; i++) {
 			
 			// if the wall has a screen; draw it from the first seat until the last seat
-			if((i < 4 || i > this.numberOfSeatsInEachRow * this.SEAT_CHARACTER_WIDTH) && hasScreen) {
+			if((i < 4 || i > this.numberOfSeatsInEachRow * SEAT_CHARACTER_WIDTH) && hasScreen) {
 				System.out.print("=");
 			} else {
 				System.out.print("-");

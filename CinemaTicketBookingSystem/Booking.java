@@ -109,7 +109,7 @@ public class Booking {
 				int myRow = this.userInputIntegerPrompt("Enter row number for ticket #" + i +":");
 				this.getPresentation().getAuditorium().getRow(myRow);
 				int mySeat = this.userInputIntegerPrompt("Select seat number for ticket #" + i +":");
-				this.getPresentation().getAuditorium().getRow(myRow).getSeat(mySeat).setIsBooked(true);
+				this.getPresentation().getAuditorium().getRow(myRow).getSeat(mySeat).isBooked(true);
 				this.getPresentation().getAuditorium().displayAuditoriumOverview();
 			}
 			catch (WrongUserInputException e) {

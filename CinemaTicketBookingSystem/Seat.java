@@ -21,16 +21,15 @@ public class Seat {
 	}
 
 	
-	public boolean getIsBooked() {
+	public boolean isBooked() {
 		return this.isBooked;
 	}
-
 	
-	public void setIsBooked(boolean isBooked) throws WrongUserInputException {
+	public void isBooked(boolean input) throws WrongUserInputException {
 		if (this.isBooked) {
 			throw new WrongUserInputException("Sorry, the seat is not available.");
 		} else {
-			this.isBooked = isBooked;
+			this.isBooked = input;
 		}
 	}
 }
