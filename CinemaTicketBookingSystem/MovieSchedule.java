@@ -35,14 +35,32 @@ public class MovieSchedule {
 
 
 	/**
-	 * Add a Presentation object to the MovieSchedule
+	 * Add a Presentation to the MovieSchedule.
 	 * 
-	 * @param presentation
-	 *            as a Presentation object
+	 * @param movie
+	 *            expects a Movie object. The Movie that will be displayed on
+	 *            the Presentation.
+	 * @param year
+	 *            expects an integer. The year part of the date when the
+	 *            Presentation is displayed.
+	 * @param month
+	 *            expects an integer. The month part of the date when the
+	 *            Presentation is displayed.
+	 * @param day
+	 *            expects an integer. The day part of the date when the
+	 *            Presentation is displayed.
+	 * @param hour
+	 *            expects an integer. The hour of the day when the Presentation
+	 *            is displayed.
+	 * @param minute
+	 *            expects an integer. The minute of the hour when the
+	 *            Presentation is displayed.
 	 */
 	public void addPresentationToSchedule(Movie movie, int year, int month, int day, int hour, int minute) {
 		Presentation presentation = new Presentation(movie, year, month, day, hour, minute);
 		this.presentations.add(presentation);
+		
+		// sort the collection of Presentations (by date)
 		Collections.sort(this.presentations);
 	}
 
