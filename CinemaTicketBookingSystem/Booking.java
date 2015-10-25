@@ -5,10 +5,6 @@ import java.util.Scanner;
 
 public class Booking {
 
-	/**
-	 * The booking reference is generated when the customer has confirmed the
-	 * booking.
-	 */
 	private Customer customer;
 	private int numberOfSeats;
 	private Presentation presentation;

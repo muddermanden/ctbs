@@ -50,8 +50,7 @@ public class MovieSchedule {
 		System.out.println("Movie Schedule:");
 
 		for (int i = 0; i < movieSchedule.getPresentations().size(); i++) {
-			Presentation p = movieSchedule.getPresentation(i);
-			System.out.printf("%2d) %s - %s\n", p.getPresentationID(), p.getDatetime(), p.getMovie());
+			System.out.println(movieSchedule.getPresentation(i));
 		}
 	}
 

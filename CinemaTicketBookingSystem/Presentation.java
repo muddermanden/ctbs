@@ -58,6 +58,6 @@ public class Presentation implements Comparable<Presentation> {
 
 	@Override
 	public String toString() {
-		return String.format("%s - %s", getDatetime());
+		return String.format("%2d) %s - %s", getPresentationID(), getDatetime(), getMovie());
 	}
 }
