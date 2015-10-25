@@ -24,9 +24,9 @@ public class Main {
 		Main.movieSchedule = MovieSchedule.getInstance();
 
 		// create some movies
-		Movie terminator1 = new Movie("Terminator I");
-		Movie terminator2 = new Movie("Terminator II");
-		Movie frida = new Movie("Frække Frida");
+		Movie terminator1 = new Movie("The Terminator", 107);
+		Movie terminator2 = new Movie("Terminator 2: Judgment Day", 137);
+		Movie frida = new Movie("Frække Frida og de frygtløse spioner", 75);
 
 		// create some presentations of the movies
 		movieSchedule.addPresentationToSchedule(terminator1, 2015, 11, 20, 15, 30);
