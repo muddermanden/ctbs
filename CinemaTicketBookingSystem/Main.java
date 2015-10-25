@@ -2,9 +2,10 @@ package CinemaTicketBookingSystem;
 
 public class Main {
 
-	private static MovieSchedule movieSchedule;
-	private static Auditorium auditorium;
-	
+	private static Auditorium		auditorium;
+	private static MovieSchedule	movieSchedule;
+
+
 	/**
 	 * 
 	 * @param args
@@ -12,30 +13,25 @@ public class Main {
 	public static void main(String[] args) {
 		// setup the application with mock data for demonstration purpose
 		Main.setupMockData();
-		
-		
+
 		Booking myBooking = new Booking();
-		myBooking.promptForPresentationSelection();
-		myBooking.promptForNumberOfSeats();
-		myBooking.getPresentation().getAuditorium().displayAuditoriumOverview();
-		myBooking.promptForSeatSelection();
-		myBooking.promptForCustomerInfo();
-		System.out.println(myBooking.displayBookingInformation());
+		myBooking.startNewBooking();
 	}
 
+
 	public static void setupMockData() {
-		
+
 		// get the movie schedule instance
 		Main.movieSchedule = MovieSchedule.getInstance();
-		
+
 		// create an auditorium
 		Main.auditorium = new Auditorium(12, 10);
-		
+
 		// create some movies
 		Movie terminator1 = new Movie("Terminator I");
 		Movie terminator2 = new Movie("Terminator II");
 		Movie frida = new Movie("Frække Frida");
-		
+
 		// create some presentations of the movies
 		Presentation p1 = new Presentation(Main.auditorium, terminator1);
 		p1.setDateTime(2015, 11, 20, 15, 30);
@@ -47,8 +43,7 @@ public class Main {
 		p4.setDateTime(2015, 11, 25, 11, 30);
 		Presentation p5 = new Presentation(Main.auditorium, terminator1);
 		p5.setDateTime(2015, 11, 26, 11, 30);
-		
-		
+
 		// add the movies to the movie schedule
 		Main.movieSchedule.addPresentationToSchedule(p1);
 		Main.movieSchedule.addPresentationToSchedule(p2);
