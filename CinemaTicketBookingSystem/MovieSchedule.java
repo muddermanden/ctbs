@@ -37,31 +37,30 @@ public class MovieSchedule{
 		Collections.sort(this.presentations);
 	}
 	
+	public ArrayList<Presentation> getPresentations() {
+		return this.presentations;
+	}
 	
-	public Presentation selectPresentationMenu() {
-		Scanner scanner = new Scanner(System.in);
-		
-		System.out.println("What would you like to see?");
+	public Presentation getPresentation(int index) {
+		return this.getPresentations().get(index);
+	}
+	
+	public void displayMovieSchedule() {
+		System.out.println("Movie Schedule:");
 
-		for (int i = 0; i < getInstance().presentations.size(); i++) {
-			Presentation p = getInstance().presentations.get(i);
+		for (int i = 0; i < movieSchedule.getPresentations().size(); i++) {
+			Presentation p = movieSchedule.getPresentation(i);
 			System.out.printf("%2d) %s - %s\n", p.getPresentationID(), p.getDatetime(), p.getMovie());
 		}
-
-		System.out.println(" 0) Exit");
-		System.out.print("Enter choice: ");
-		int input = scanner.nextInt();
-		
-		Presentation userChoice = null;
-		for(Presentation p: getInstance().presentations) {
-			if (p.getPresentationID() == input) {
-				userChoice = p;
+	}
+	
+	public Presentation matchPresentation(int presentationID) {
+		Presentation match = null;
+		for(Presentation presentation: this.getPresentations()) {
+			if(presentation.getPresentationID() == presentationID) {
+				match = presentation;
 			}
 		}
-		
-		System.out.printf("You have selected the presentation of %s on %s\n", userChoice.getMovieTitle(), userChoice.getDatetime());
-		
-		//scanner.close();
-		return userChoice;
+		return match;
 	}
 }
