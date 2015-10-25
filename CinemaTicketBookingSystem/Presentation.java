@@ -22,6 +22,10 @@ public class Presentation implements Comparable<Presentation> {
 		this.movie = movie;
 	}
 
+	public Auditorium getAuditorium() {
+		return this.auditorium;
+	}
+	
 	public Movie getMovie() {
 		return this.movie;
 	}
