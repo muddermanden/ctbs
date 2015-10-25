@@ -7,12 +7,14 @@ public class Auditorium {
 	// constants; they never change while the programming is running
 	static final int SEAT_CHARACTER_WIDTH = 3;
 	static final int SPACE_BETWEEN_ISLES = 5;
+	static final int NUMBER_OF_ROWS_IN_AUDITORIUM = 12;
+	static final int NUMBER_OF_SEATS_IN_EACH_ROW = 10;
 
 	/**
 	 * private instance variables
 	 */
-	private final int numberOfRowsInAuditorium;
-	private final int numberOfSeatsInEachRow;
+
+
 	private final ArrayList<Row> rowsInAuditorium;
 	private final int wallSize;
 
@@ -27,37 +29,45 @@ public class Auditorium {
 	 * @param numberOfSeatsInEachRow
 	 *            expects an integer with the number of seats in each row
 	 */
-	Auditorium(int numberOfRowsInAuditorium, int numberOfSeatsInEachRow) {
+	Auditorium() {
 
 		this.rowsInAuditorium = new ArrayList<Row>();
 
-		this.numberOfRowsInAuditorium = numberOfRowsInAuditorium;
-		this.numberOfSeatsInEachRow = numberOfSeatsInEachRow;
-		this.wallSize = numberOfSeatsInEachRow * SEAT_CHARACTER_WIDTH + 5;
+		this.wallSize = NUMBER_OF_SEATS_IN_EACH_ROW * SEAT_CHARACTER_WIDTH + 5;
 
-		setupRows(this.numberOfSeatsInEachRow);
-
-		// mock data, already booked seats
-		try {
-
-			getRow(1).getSeat(1).isBooked(true);
-			getRow(5).getSeat(4).isBooked(true);
-			getRow(5).getSeat(5).isBooked(true);
-			getRow(10).getSeat(6).isBooked(true);
-			getRow(10).getSeat(7).isBooked(true);
-			getRow(11).getSeat(3).isBooked(true);
-			getRow(11).getSeat(4).isBooked(true);
-			getRow(11).getSeat(5).isBooked(true);
-			getRow(7).getSeat(5).isBooked(true);
-			getRow(7).getSeat(6).isBooked(true);
-			getRow(7).getSeat(7).isBooked(true);
-			getRow(7).getSeat(8).isBooked(true);
-
-		} catch (WrongUserInputException e) {
-			e.printMessage();
-		}
+		setupRows(NUMBER_OF_SEATS_IN_EACH_ROW);
+		
+		addMockData();
 	}
 
+	
+	public int getNumberOfAvailableSeats() {
+		int numberOfSeatsAvailable = 0;
+		for (Row row: getRows()) {
+			for (Seat seat: row.getSeats()) {
+				if (seat.isBooked()) continue;
+				numberOfSeatsAvailable++;
+			}
+		}
+		return numberOfSeatsAvailable;
+	}
+	
+	
+	private void addMockData() {
+		int a = (int) (Math.random() * NUMBER_OF_ROWS_IN_AUDITORIUM * NUMBER_OF_SEATS_IN_EACH_ROW);
+		int i = 0;
+		while (i < a) {
+			int b = (int) (Math.random() * NUMBER_OF_ROWS_IN_AUDITORIUM) + 1;
+			int c = (int) (Math.random() * NUMBER_OF_SEATS_IN_EACH_ROW) + 1;
+			try {
+				getRow(b).getSeat(c).isBooked(true);
+				i++;
+			} catch (WrongUserInputException e) {
+				//e.printMessage();
+				continue;
+			}
+		}
+	}
 
 	/**
 	 * description
@@ -68,7 +78,7 @@ public class Auditorium {
 		displayWall(true);
 
 		for (Row row : this.rowsInAuditorium) {
-			// make an extra linebreak to show where the isles are
+			// make an extra line break to show where the isles are
 			if (row.getRowNumber() % SPACE_BETWEEN_ISLES == 0) System.out.println();
 
 			// write the seat numbers horizontally before the first row
@@ -77,7 +87,7 @@ public class Auditorium {
 				// add spaces to align numbers with seats
 				System.out.print("   ");
 
-				for (int k = 1; k <= this.numberOfSeatsInEachRow; k++) {
+				for (int k = 1; k <= NUMBER_OF_SEATS_IN_EACH_ROW; k++) {
 					System.out.printf("%3d", k);
 				}
 				System.out.println();
@@ -126,7 +136,7 @@ public class Auditorium {
 
 			// if the wall has a screen; draw it from the first seat until the
 			// last seat
-			if ((i < 4 || i > this.numberOfSeatsInEachRow * SEAT_CHARACTER_WIDTH) && hasScreen) {
+			if ((i < 4 || i > NUMBER_OF_SEATS_IN_EACH_ROW * SEAT_CHARACTER_WIDTH) && hasScreen) {
 				System.out.print("=");
 			} else {
 				System.out.print("-");
@@ -171,10 +181,10 @@ public class Auditorium {
 
 	private void setupRows(int numberOfSeatsInEachRow) {
 		Row currentRow;
-		for (int i = 1; i <= numberOfRowsInAuditorium; i++) {
+		for (int i = 1; i <= NUMBER_OF_ROWS_IN_AUDITORIUM; i++) {
 			currentRow = new Row(i);
 			rowsInAuditorium.add(currentRow);
-			for (int j = 1; j <= numberOfSeatsInEachRow; j++) {
+			for (int j = 1; j <= NUMBER_OF_SEATS_IN_EACH_ROW; j++) {
 				currentRow.getSeats().add(new Seat(j));
 			}
 		}

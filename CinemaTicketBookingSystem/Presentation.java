@@ -12,9 +12,10 @@ public class Presentation implements Comparable<Presentation> {
 	private int presentationID;
 
 
-	Presentation(Auditorium auditorium, Movie movie) {
+	Presentation(Movie movie, int year, int month, int day, int hour, int minute) {
 		this.presentationID = maxPresentationID = maxPresentationID + 1;
-		this.auditorium = auditorium;
+		this.auditorium = new Auditorium();
+		setDateTime(year, month, day, hour, minute);
 		this.movie = movie;
 	}
 
@@ -25,6 +26,11 @@ public class Presentation implements Comparable<Presentation> {
 		return getDatetime().compareTo(o.getDatetime());
 	}
 
+	
+	private int getNumberOfAvailableSeats() {
+		return getAuditorium().getNumberOfAvailableSeats();
+	}
+	
 
 	public Auditorium getAuditorium() {
 		return this.auditorium;
@@ -42,7 +48,7 @@ public class Presentation implements Comparable<Presentation> {
 
 
 	public String getMovieTitle() {
-		return this.movie.getTitle();
+		return getMovie().toString();
 	}
 
 
@@ -51,13 +57,13 @@ public class Presentation implements Comparable<Presentation> {
 	}
 
 
-	public void setDateTime(int year, int month, int day, int hour, int minute) {
+	private void setDateTime(int year, int month, int day, int hour, int minute) {
 		this.dateTime = LocalDateTime.of(year, month, day, hour, minute);
 	}
 
 
 	@Override
 	public String toString() {
-		return String.format("%2d) %s - %s", getPresentationID(), getDatetime(), getMovie());
+		return String.format("%2d) %s - %s (%d available seats)", getPresentationID(), getDatetime(), getMovie(), getNumberOfAvailableSeats());
 	}
 }

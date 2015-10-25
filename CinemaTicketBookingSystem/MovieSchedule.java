@@ -40,14 +40,15 @@ public class MovieSchedule {
 	 * @param presentation
 	 *            as a Presentation object
 	 */
-	public void addPresentationToSchedule(Presentation presentation) {
+	public void addPresentationToSchedule(Movie movie, int year, int month, int day, int hour, int minute) {
+		Presentation presentation = new Presentation(movie, year, month, day, hour, minute);
 		this.presentations.add(presentation);
 		Collections.sort(this.presentations);
 	}
 
 
 	public void displayMovieSchedule() {
-		System.out.println("Movie Schedule:");
+		System.out.println("Movie Presentation Schedule:");
 
 		for (int i = 0; i < movieSchedule.getPresentations().size(); i++) {
 			System.out.println(movieSchedule.getPresentation(i));
@@ -60,7 +61,7 @@ public class MovieSchedule {
 	}
 
 
-	public ArrayList<Presentation> getPresentations() {
+	private ArrayList<Presentation> getPresentations() {
 		return this.presentations;
 	}
 
