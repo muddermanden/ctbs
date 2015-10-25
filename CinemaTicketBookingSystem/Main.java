@@ -2,8 +2,8 @@ package CinemaTicketBookingSystem;
 
 public class Main {
 
-	private static Auditorium		auditorium;
-	private static MovieSchedule	movieSchedule;
+	private static Auditorium auditorium;
+	private static MovieSchedule movieSchedule;
 
 
 	/**

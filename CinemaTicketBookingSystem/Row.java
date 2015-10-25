@@ -3,50 +3,61 @@ package CinemaTicketBookingSystem;
 import java.util.*;
 
 public class Row {
-	
-	private ArrayList<Seat> seats;
-	private int rowNumber;
 
-	
+	private int rowNumber;
+	private ArrayList<Seat> seats;
+
+
 	Row(int rowNumber) {
-		this.setRowNumber(rowNumber);
+		setRowNumber(rowNumber);
 		seats = new ArrayList<Seat>();
 	}
-	
-	
+
+
 	/**
-	 * Get the collection of seats in the row.
-	 * @return ArrayList of Seat objects.
+	 * Get a specific row by its row number.
+	 * 
+	 * @return Row object.
 	 */
-	public ArrayList<Seat> getSeats() { return this.seats; }
-	
-	
+	public int getRowNumber() {
+		return rowNumber;
+	}
+
+
 	/**
 	 * Get a specific seat by its seat number.
-	 * @param seatNumber as integer.
+	 * 
+	 * @param seatNumber
+	 *            as integer.
 	 * @return Seat object.
-	 * @throws WrongUserInputException when seat number is not in the row.
+	 * @throws WrongUserInputException
+	 *             when seat number is not in the row.
 	 */
-	public Seat getSeat(int seatNumber) throws WrongUserInputException { 
+	public Seat getSeat(int seatNumber) throws WrongUserInputException {
 		try {
-			return getSeats().get(seatNumber - 1); 
+			return getSeats().get(seatNumber - 1);
 		} catch (IndexOutOfBoundsException e) {
 			throw new WrongUserInputException("Sorry, the seat does not exist.");
 		}
 	}
-	
-	
+
+
 	/**
-	 * Get a specific row by its row number.
-	 * @return Row object.
+	 * Get the collection of seats in the row.
+	 * 
+	 * @return ArrayList of Seat objects.
 	 */
-	public int getRowNumber() { return rowNumber; }
-	
-	
+	public ArrayList<Seat> getSeats() {
+		return this.seats;
+	}
+
+
 	/**
 	 * 
 	 * @param rowNumber
 	 */
-	public void setRowNumber(int rowNumber) { this.rowNumber = rowNumber; }
+	public void setRowNumber(int rowNumber) {
+		this.rowNumber = rowNumber;
+	}
 
 }

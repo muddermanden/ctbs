@@ -5,11 +5,11 @@ import java.time.format.DateTimeFormatter;
 
 public class Presentation implements Comparable<Presentation> {
 
-	private static int		maxPresentationID;
-	private Auditorium		auditorium;
-	private LocalDateTime	dateTime;
-	private Movie			movie;
-	private int				presentationID;
+	private static int maxPresentationID;
+	private Auditorium auditorium;
+	private LocalDateTime dateTime;
+	private Movie movie;
+	private int presentationID;
 
 
 	Presentation(Auditorium auditorium, Movie movie) {
@@ -21,15 +21,9 @@ public class Presentation implements Comparable<Presentation> {
 
 	@Override
 	public int compareTo(Presentation o) {
-		if (getDatetime() == null || o.getDatetime() == null)
-			return 0;
+		if (getDatetime() == null || o.getDatetime() == null) return 0;
 		return getDatetime().compareTo(o.getDatetime());
 	}
-
-
-//	public boolean equals(Presentation p) {
-//		return this.presentationID == p.presentationID;
-//	}
 
 
 	public Auditorium getAuditorium() {
@@ -64,6 +58,6 @@ public class Presentation implements Comparable<Presentation> {
 
 	@Override
 	public String toString() {
-		return String.format("%s - %s", this.getDatetime());
+		return String.format("%s - %s", getDatetime());
 	}
 }

@@ -4,6 +4,10 @@ import java.util.ArrayList;
 
 public class Auditorium {
 
+	// constants; they never change while the programming is running
+	static final int SEAT_CHARACTER_WIDTH = 3;
+	static final int SPACE_BETWEEN_ISLES = 5;
+
 	/**
 	 * private instance variables
 	 */
@@ -12,35 +16,6 @@ public class Auditorium {
 	private final ArrayList<Row> rowsInAuditorium;
 	private final int wallSize;
 
-	// constants; they never change while the programming is running
-	static final int SEAT_CHARACTER_WIDTH = 3;
-	static final int SPACE_BETWEEN_ISLES = 5;
-
-	/**
-	 * Accessor for rows. Prevents direct access to values.
-	 * 
-	 * @return
-	 */
-	private ArrayList<Row> getRows() {
-		return this.rowsInAuditorium;
-	}
-
-	/**
-	 * Accessor for a specific row. Prevents direct access to the values, which
-	 * in this case allows us to add some business logic, e.g. by subtracting
-	 * one from the row number in order to match the index number.
-	 * 
-	 * @param rowNumber
-	 * @return
-	 */
-	public Row getRow(int rowNumber) throws WrongUserInputException {
-		try {
-			return getRows().get(rowNumber - 1);
-		} catch (IndexOutOfBoundsException e) {
-			throw new WrongUserInputException("The row does not exist.");
-		}
-
-	}
 
 	/**
 	 * The constructor initializes the internal fields of the instantiated
@@ -60,7 +35,7 @@ public class Auditorium {
 		this.numberOfSeatsInEachRow = numberOfSeatsInEachRow;
 		this.wallSize = numberOfSeatsInEachRow * SEAT_CHARACTER_WIDTH + 5;
 
-		this.setupRows(this.numberOfSeatsInEachRow);
+		setupRows(this.numberOfSeatsInEachRow);
 
 		// mock data, already booked seats
 		try {
@@ -83,18 +58,18 @@ public class Auditorium {
 		}
 	}
 
+
 	/**
 	 * description
 	 */
 	public void displayAuditoriumOverview() {
 
 		// draw a wall with a screen
-		this.displayWall(true);
+		displayWall(true);
 
 		for (Row row : this.rowsInAuditorium) {
 			// make an extra linebreak to show where the isles are
-			if (row.getRowNumber() % SPACE_BETWEEN_ISLES == 0)
-				System.out.println();
+			if (row.getRowNumber() % SPACE_BETWEEN_ISLES == 0) System.out.println();
 
 			// write the seat numbers horizontally before the first row
 			if (row.getRowNumber() == 1) {
@@ -113,31 +88,31 @@ public class Auditorium {
 
 			// show the seats based on booking status
 			for (Seat seat : row.getSeats()) {
-				if (seat.isBooked())
+				if (seat.isBooked()) {
 					System.out.print("[▓]");
-				else
+				} else {
 					System.out.print("[░]");
+				}
 			}
 			System.out.println();
 		}
 
 		// draw a wall (without screen)
-		this.displayWall();
+		displayPlainWall();
 	}
 
-	private void setupRows(int numberOfSeatsInEachRow) {
-		Row currentRow;
-		for (int i = 1; i <= numberOfRowsInAuditorium; i++) {
-			currentRow = new Row(i);
-			rowsInAuditorium.add(currentRow);
-			for (int j = 1; j <= numberOfSeatsInEachRow; j++) {
-				currentRow.getSeats().add(new Seat(j));
-			}
-		}
-	}
 
 	/**
-	 * Draw an ASCII representation of the auditorium.
+	 * Display a plain wall (without the screen). Behaves like invoking
+	 * displayWall(false) directly.
+	 */
+	private void displayPlainWall() {
+		displayWall(false);
+	}
+
+
+	/**
+	 * Display an ASCII representation of the auditorium.
 	 * 
 	 * @param hasScreen
 	 *            indicates whether a screen should be drawn as part of the wall
@@ -160,16 +135,48 @@ public class Auditorium {
 
 		// if the method is invoked with hasScreen then append an extra newline
 		// in order to make space between the wall and the first row of seats
-		if (hasScreen)
-			System.out.println("+\n");
+		if (hasScreen) System.out.println("+\n");
 		else
 			System.out.println("+");
 	}
 
+
 	/**
-	 * Draw a regular wall. Behaves like invoking displayWall(false) directly.
+	 * Accessor for a specific row. Prevents direct access to the values, which
+	 * in this case allows us to add some business logic, e.g. by subtracting
+	 * one from the row number in order to match the index number.
+	 * 
+	 * @param rowNumber
+	 * @return
 	 */
-	private void displayWall() {
-		this.displayWall(false);
+	public Row getRow(int rowNumber) throws WrongUserInputException {
+		try {
+			return getRows().get(rowNumber - 1);
+		} catch (IndexOutOfBoundsException e) {
+			throw new WrongUserInputException("The row does not exist.");
+		}
+
+	}
+
+
+	/**
+	 * Accessor for rows. Prevents direct access to values.
+	 * 
+	 * @return
+	 */
+	private ArrayList<Row> getRows() {
+		return this.rowsInAuditorium;
+	}
+
+
+	private void setupRows(int numberOfSeatsInEachRow) {
+		Row currentRow;
+		for (int i = 1; i <= numberOfRowsInAuditorium; i++) {
+			currentRow = new Row(i);
+			rowsInAuditorium.add(currentRow);
+			for (int j = 1; j <= numberOfSeatsInEachRow; j++) {
+				currentRow.getSeats().add(new Seat(j));
+			}
+		}
 	}
 }

@@ -2,8 +2,8 @@ package CinemaTicketBookingSystem;
 
 public class Seat {
 
-	private boolean	isBooked;
-	private int		seatNumber;
+	private boolean isBooked;
+	private int seatNumber;
 
 
 	Seat(int seatNumber) {
