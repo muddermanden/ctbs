@@ -30,9 +30,9 @@ public class Booking
 
 	/**
 	 * @param row
-	 *            is the row that customer has selected
+	 *            is the row that customer has selected.
 	 * @param seat
-	 *            is the seat that customer has selected
+	 *            is the seat that customer has selected.
 	 */
 	private void addSeatToBooking(Seat seat)
 	{
