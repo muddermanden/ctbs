@@ -22,8 +22,8 @@ public class Presentation implements Comparable<Presentation> {
 
 	@Override
 	public int compareTo(Presentation other) {
-		// check that both Presentation objects exists, if not return 0 (equal)
-		if (getDatetime() == null || other.getDatetime() == null) return 0;
+		// check that both Presentation objects have a date/time before comparing
+		if (getDatetime() == null || other.getDatetime() == null) throw new NullPointerException();
 		
 		// compare the date/time of the Presentations
 		return getDatetime().compareTo(other.getDatetime());

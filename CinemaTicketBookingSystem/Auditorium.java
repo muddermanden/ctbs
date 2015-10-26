@@ -32,11 +32,8 @@ public class Auditorium {
 	Auditorium() {
 
 		this.rowsInAuditorium = new ArrayList<Row>();
-
 		this.wallSize = NUMBER_OF_SEATS_IN_EACH_ROW * SEAT_CHARACTER_WIDTH + 5;
-
 		setupRows(NUMBER_OF_SEATS_IN_EACH_ROW);
-		
 		addMockData();
 	}
 
@@ -52,7 +49,7 @@ public class Auditorium {
 		return numberOfSeatsAvailable;
 	}
 	
-	
+
 	private void addMockData() {
 		int a = (int) (Math.random() * NUMBER_OF_ROWS_IN_AUDITORIUM * NUMBER_OF_SEATS_IN_EACH_ROW);
 		int i = 0;

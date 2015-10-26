@@ -4,14 +4,13 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-
 public class Booking {
 
 	private Customer customer;
+	private boolean isConfirmed;
 	private int numberOfSeats;
 	private Presentation presentation;
 	private ArrayList<Seat> seatsBooked;
-	private boolean isConfirmed;
 
 
 	public Booking() {
@@ -32,9 +31,31 @@ public class Booking {
 	}
 
 
+	private void confirmBooking() {
+		char response = promptUserInputString("Type 'y' to confirm, or any key to cancel.").charAt(0);
+		if (response == 'y') {
+			// mark the booking as confirmed
+			isConfirmed(true);
+			System.out.println("Your booking is complete! :D");
+		} else {
+			// release the seats again
+			for (Seat seat : getSeatsBooked()) {
+				try {
+					seat.isBooked(false);
+				} catch (WrongUserInputException e) {
+					e.printMessage();
+				}
+			}
+			System.out.println("Your booking was cancelled!");
+			System.exit(0);
+		}
+	}
+
+
 	private String displayBookingInformation() {
 		String bookingInfo = new String();
 
+		//@formatter:off
 		bookingInfo = String.format(
 				"#### BOOKING INFORMATION ####\n\n" + 
 				"Please confirm the booking details!\n" + 
@@ -46,6 +67,7 @@ public class Booking {
 				"Seats booked:\n%s",
 				getCustomer().getName(), getCustomer().getPhoneNumber(), getPresentation().getMovieTitle(),
 				getPresentation().getDatetime(), getNumberOfSeats(), getSeatsBookedAsString());
+		//@formatter:on
 
 		System.out.println(bookingInfo);
 		return bookingInfo;
@@ -53,15 +75,19 @@ public class Booking {
 
 
 	private Presentation displayPresentationMenu() {
+		// get the movie schedule
 		MovieSchedule movieSchedule = MovieSchedule.getInstance();
 
+		// the users choice
 		Presentation myPresentation = null;
-		int input = 0;
 
+		// ask the movie schedule to display a schedule
 		movieSchedule.displayMovieSchedule();
 
-		input = promptUserInputInteger("Enter the number of the presentation you will see:");
+		// ask the user to enter a number of choice
+		int input = promptUserInputInteger("Enter the number of the presentation you will see:");
 
+		// get the presentation with the ID the user entered
 		myPresentation = movieSchedule.matchPresentation(input);
 
 		return myPresentation;
@@ -87,16 +113,22 @@ public class Booking {
 	private ArrayList<Seat> getSeatsBooked() {
 		return this.seatsBooked;
 	}
-	
+
 
 	private String getSeatsBookedAsString() {
 		String str = new String();
 		int i = 1;
-		for (Seat seat: getSeatsBooked()) {
-			str += String.format("  Ticket #%-2d: On row %2d, seat %2d\n", i, seat.getSeatNumber(), seat.getRowNumber());
+		for (Seat seat : getSeatsBooked()) {
+			str += String.format("  Ticket #%-2d: On row %2d, seat %2d\n", i, seat.getSeatNumber(),
+					seat.getRowNumber());
 			i++;
 		}
 		return str;
+	}
+
+
+	private void isConfirmed(boolean confirm) {
+		this.isConfirmed = confirm;
 	}
 
 
@@ -193,31 +225,8 @@ public class Booking {
 			}
 		} while (true);
 	}
-	
-	
-	private void confirmBooking() {
-		char response = promptUserInputString("Type 'y' to confirm, or any key to cancel.").charAt(0);
-		if (response == 'y') {
-			isConfirmed(true);
-			System.out.println("Your booking is complete! :D");
-		} else {
-			for(Seat seat: getSeatsBooked()) {
-				try {
-					seat.isBooked(false);
-				} catch (WrongUserInputException e) {
-					e.printMessage();
-				}
-			}
-			System.exit(0);
-		}
-	}
 
 
-	private void isConfirmed(boolean confirm) {
-		this.isConfirmed = confirm;
-	}
-	
-	
 	private void setNumberOfSeats(int numberOfSeats) {
 		this.numberOfSeats = numberOfSeats;
 	}

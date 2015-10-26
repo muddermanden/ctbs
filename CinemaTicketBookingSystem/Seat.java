@@ -19,7 +19,7 @@ public class Seat {
 
 
 	public void isBooked(boolean input) throws WrongUserInputException {
-		if (this.isBooked) {
+		if (this.isBooked && input) {
 			throw new WrongUserInputException("Sorry, the seat is not available.");
 		} else {
 			this.isBooked = input;
