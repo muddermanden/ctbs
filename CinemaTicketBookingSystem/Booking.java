@@ -1,48 +1,78 @@
 package CinemaTicketBookingSystem;
 
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.UUID;
 
-public class Booking {
+public class Booking
+{
 
 	private Customer customer;
 	private boolean isConfirmed;
 	private int numberOfSeats;
 	private Presentation presentation;
 	private ArrayList<Seat> seatsBooked;
+	private String bookingReference;
 
 
-	public Booking() {
-		customer = new Customer();
-		seatsBooked = new ArrayList<Seat>();
-		isConfirmed = false;
+	public Booking()
+	{
+		this.customer = new Customer();
+		this.seatsBooked = new ArrayList<Seat>();
+		this.isConfirmed = false;
+		setBookingReference();
 	}
 
 
 	/**
 	 * @param row
-	 *            is the row that customer has selected
+	 *            is the row that customer has selected.
 	 * @param seat
-	 *            is the seat that customer has selected
+	 *            is the seat that customer has selected.
 	 */
-	private void addSeatToBooking(Seat seat) {
+	private void addSeatToBooking(Seat seat)
+	{
 		this.seatsBooked.add(seat);
 	}
 
 
-	private void confirmBooking() {
+	private void setBookingReference()
+	{
+		this.bookingReference = UUID.randomUUID().toString().substring(0, 8).toUpperCase();
+	}
+
+
+	private String getBookingReference()
+	{
+		return this.bookingReference;
+	}
+
+
+	private void confirmBooking()
+	{
 		char response = promptUserInputString("Type 'y' to confirm, or any key to cancel.").charAt(0);
-		if (response == 'y') {
+		if (response == 'y')
+		{
 			// mark the booking as confirmed
-			isConfirmed(true);
+			setIsConfirmed(true);
+			saveBookingToFile();
 			System.out.println("Your booking is complete! :D");
-		} else {
+		}
+		else
+		{
 			// release the seats again
-			for (Seat seat : getSeatsBooked()) {
-				try {
-					seat.isBooked(false);
-				} catch (WrongUserInputException e) {
+			for (Seat seat : getSeatsBooked())
+			{
+				try
+				{
+					seat.setIsBooked(false);
+				}
+				catch (WrongUserInputException e)
+				{
 					e.printMessage();
 				}
 			}
@@ -52,29 +82,38 @@ public class Booking {
 	}
 
 
-	private String displayBookingInformation() {
+	private String displayBookingInformation()
+	{
 		String bookingInfo = new String();
 
 		//@formatter:off
 		bookingInfo = String.format(
-				"#### BOOKING INFORMATION ####\n\n" + 
-				"Please confirm the booking details!\n" + 
+				"#### BOOKING INFORMATION ####\n\n" +  
+				"Booking ref.:     %s\n" +
 				"Name:             %s\n" + 
 				"Phone:            %s\n" + 
 				"Title:            %s\n" + 
 				"Date:             %s\n" + 
 				"Number of seats:  %d\n" +
 				"Seats booked:\n%s",
-				getCustomer().getName(), getCustomer().getPhoneNumber(), getPresentation().getMovieTitle(),
-				getPresentation().getDatetime(), getNumberOfSeats(), getSeatsBookedAsString());
+				getBookingReference(), getCustomer().getName(), getCustomer().getPhoneNumber(), 
+				getPresentation().getMovieTitle(), getPresentation().getDatetime(), getNumberOfSeats(), 
+				getSeatsBookedAsString());
 		//@formatter:on
 
 		System.out.println(bookingInfo);
+
+		if (!getIsConfirmed())
+		{
+			System.out.println("Please confirm the booking details!\n");
+		}
+
 		return bookingInfo;
 	}
 
 
-	private Presentation displayPresentationMenu() {
+	private Presentation displayPresentationMenu()
+	{
 		// get the movie schedule
 		MovieSchedule movieSchedule = MovieSchedule.getInstance();
 
@@ -95,30 +134,36 @@ public class Booking {
 	}
 
 
-	private Customer getCustomer() {
+	private Customer getCustomer()
+	{
 		return this.customer;
 	}
 
 
-	private int getNumberOfSeats() {
+	private int getNumberOfSeats()
+	{
 		return this.numberOfSeats;
 	}
 
 
-	private Presentation getPresentation() {
+	private Presentation getPresentation()
+	{
 		return this.presentation;
 	}
 
 
-	private ArrayList<Seat> getSeatsBooked() {
+	private ArrayList<Seat> getSeatsBooked()
+	{
 		return this.seatsBooked;
 	}
 
 
-	private String getSeatsBookedAsString() {
+	private String getSeatsBookedAsString()
+	{
 		String str = new String();
 		int i = 1;
-		for (Seat seat : getSeatsBooked()) {
+		for (Seat seat : getSeatsBooked())
+		{
 			str += String.format("  Ticket #%-2d: On row %2d, seat %2d\n", i, seat.getRowNumber(),
 					seat.getSeatNumber());
 			i++;
@@ -127,12 +172,20 @@ public class Booking {
 	}
 
 
-	private void isConfirmed(boolean confirm) {
-		this.isConfirmed = confirm;
+	private void setIsConfirmed(boolean value)
+	{
+		this.isConfirmed = value;
 	}
 
 
-	private void promptForCustomerInfo() {
+	private boolean getIsConfirmed()
+	{
+		return this.isConfirmed;
+	}
+
+
+	private void promptForCustomerInfo()
+	{
 		String fullName = promptUserInputString("Enter your full name:");
 		getCustomer().setName(fullName);
 
@@ -141,103 +194,154 @@ public class Booking {
 	}
 
 
-	private void promptForNumberOfSeats() {
+	private void promptForNumberOfSeats()
+	{
 		int numberOfSeats = 0;
 		numberOfSeats = promptUserInputInteger("How many tickets do you want?");
 		setNumberOfSeats(numberOfSeats);
 	}
 
 
-	private Presentation promptForPresentationSelection() {
+	private Presentation promptForPresentationSelection()
+	{
 
-		do {
+		do
+		{
 			Presentation selectedPresentation = displayPresentationMenu();
 			setPresentation(selectedPresentation);
-		} while (getPresentation() == null);
+		}
+		while (getPresentation() == null);
 		return getPresentation();
 	}
 
 
-	private void promptForSeatSelection() {
+	private void promptForSeatSelection()
+	{
 
 		int i = 1;
 
-		do {
+		do
+		{
 
-			try {
+			try
+			{
 				int myRowNumber = promptUserInputInteger("Enter row number for ticket #" + i + ":");
 				Row myRow = getPresentation().getAuditorium().getRow(myRowNumber);
 
 				int mySeatNumber = promptUserInputInteger("Select seat number for ticket #" + i + ":");
 				Seat mySeat = myRow.getSeat(mySeatNumber);
-				mySeat.isBooked(true);
+				mySeat.setIsBooked(true);
 
 				addSeatToBooking(mySeat);
 
 				getPresentation().getAuditorium().displayAuditoriumOverview();
 
-			} catch (WrongUserInputException e) {
+			}
+			catch (WrongUserInputException e)
+			{
 				e.printMessage();
 				continue;
 			}
 			i++;
-		} while (i <= getNumberOfSeats());
+		}
+		while (i <= getNumberOfSeats());
 	}
 
 
-	private int promptUserInputInteger(String message) {
+	private int promptUserInputInteger(String message)
+	{
 		Scanner scanner;
 		int userInput = 0;
 
-		do {
+		do
+		{
 			System.out.println(message);
-			try {
+			try
+			{
 				scanner = new Scanner(System.in);
 				userInput = scanner.nextInt();
 
-				if (userInput > 0) {
+				if (userInput > 0)
+				{
 					return userInput;
-				} else {
+				}
+				else
+				{
 					System.out.println("Please enter a positive number.");
 				}
 
-			} catch (InputMismatchException e) {
+			}
+			catch (InputMismatchException e)
+			{
 				System.out.println("Please enter number.");
 			}
-		} while (true);
+		}
+		while (true);
 	}
 
 
-	private String promptUserInputString(String message) {
+	private String promptUserInputString(String message)
+	{
 		Scanner scanner;
 		String userInput;
 
-		do {
+		do
+		{
 			System.out.println(message);
 
 			scanner = new Scanner(System.in);
 			userInput = scanner.nextLine();
 
-			if (userInput.length() > 0) {
+			if (userInput.length() > 0)
+			{
 				return userInput;
-			} else {
+			}
+			else
+			{
 				System.out.println("Please enter a string.");
 			}
-		} while (true);
+		}
+		while (true);
 	}
 
 
-	private void setNumberOfSeats(int numberOfSeats) {
+	private void setNumberOfSeats(int numberOfSeats)
+	{
 		this.numberOfSeats = numberOfSeats;
 	}
 
 
-	private void setPresentation(Presentation presentation) {
+	private void setPresentation(Presentation presentation)
+	{
 		this.presentation = presentation;
 	}
 
 
-	public void startNewBooking() {
+	private void saveBookingToFile()
+	{
+		PrintWriter writer;
+		try
+		{
+			writer = new PrintWriter(getBookingReference() + ".txt", "UTF-8");
+			writer.println(displayBookingInformation());
+			writer.close();
+		}
+		catch (FileNotFoundException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		catch (UnsupportedEncodingException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+
+	public void startNewBooking()
+	{
 		promptForPresentationSelection();
 		promptForNumberOfSeats();
 		getPresentation().getAuditorium().displayAuditoriumOverview();

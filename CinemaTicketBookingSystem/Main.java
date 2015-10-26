@@ -1,6 +1,7 @@
 package CinemaTicketBookingSystem;
 
-public class Main {
+public class Main
+{
 
 	private static MovieSchedule movieSchedule;
 
@@ -9,7 +10,8 @@ public class Main {
 	 * 
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 		// setup the application with mock data for demonstration purpose
 		Main.setupMockData();
 
@@ -18,7 +20,8 @@ public class Main {
 	}
 
 
-	public static void setupMockData() {
+	public static void setupMockData()
+	{
 
 		// get the movie schedule instance
 		Main.movieSchedule = MovieSchedule.getInstance();
