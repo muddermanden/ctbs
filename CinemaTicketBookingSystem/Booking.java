@@ -119,8 +119,8 @@ public class Booking {
 		String str = new String();
 		int i = 1;
 		for (Seat seat : getSeatsBooked()) {
-			str += String.format("  Ticket #%-2d: On row %2d, seat %2d\n", i, seat.getSeatNumber(),
-					seat.getRowNumber());
+			str += String.format("  Ticket #%-2d: On row %2d, seat %2d\n", i, seat.getRowNumber(),
+					seat.getSeatNumber());
 			i++;
 		}
 		return str;
