@@ -1,51 +1,65 @@
 package CinemaTicketBookingSystem;
 
-public class Seat {
+public class Seat
+{
 
 	private boolean isBooked;
 	private int seatNumber;
 	private Row row;
 
 
-	Seat(Row row, int seatNumber) {
+	Seat(Row row, int seatNumber)
+	{
 		setRow(row);
 		setSeatNumber(seatNumber);
 	}
 
 
-	public boolean isBooked() {
+	public boolean getIsBooked()
+	{
 		return this.isBooked;
 	}
 
 
-	public void isBooked(boolean input) throws WrongUserInputException {
-		if (this.isBooked && input) {
+	public void setIsBooked(boolean value) throws WrongUserInputException
+	{
+		if (this.isBooked && value)
+		{
 			throw new WrongUserInputException("Sorry, the seat is not available.");
-		} else {
-			this.isBooked = input;
+		}
+		else
+		{
+			this.isBooked = value;
 		}
 	}
 
-	
-	private void setRow(Row row) {
+
+	private void setRow(Row row)
+	{
 		this.row = row;
 	}
-	
-	
-	private Row getRow() {
+
+
+	private Row getRow()
+	{
 		return this.row;
 	}
-	
-	public int getRowNumber() {
+
+
+	public int getRowNumber()
+	{
 		return this.getRow().getRowNumber();
 	}
-	
 
-	private void setSeatNumber(int seatNumber) {
+
+	private void setSeatNumber(int seatNumber)
+	{
 		this.seatNumber = seatNumber;
 	}
-	
-	public int getSeatNumber() {
+
+
+	public int getSeatNumber()
+	{
 		return this.seatNumber;
 	}
 }

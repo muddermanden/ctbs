@@ -2,13 +2,15 @@ package CinemaTicketBookingSystem;
 
 import java.util.*;
 
-public class Row {
+public class Row
+{
 
 	private int rowNumber;
 	private ArrayList<Seat> seats;
 
 
-	Row(int rowNumber) {
+	Row(int rowNumber)
+	{
 		setRowNumber(rowNumber);
 		seats = new ArrayList<Seat>();
 	}
@@ -19,7 +21,8 @@ public class Row {
 	 * 
 	 * @return Row object.
 	 */
-	public int getRowNumber() {
+	public int getRowNumber()
+	{
 		return rowNumber;
 	}
 
@@ -33,10 +36,14 @@ public class Row {
 	 * @throws WrongUserInputException
 	 *             when seat number is not in the row.
 	 */
-	public Seat getSeat(int seatNumber) throws WrongUserInputException {
-		try {
+	public Seat getSeat(int seatNumber) throws WrongUserInputException
+	{
+		try
+		{
 			return getSeats().get(seatNumber - 1);
-		} catch (IndexOutOfBoundsException e) {
+		}
+		catch (IndexOutOfBoundsException e)
+		{
 			throw new WrongUserInputException("Sorry, the seat does not exist.");
 		}
 	}
@@ -47,7 +54,8 @@ public class Row {
 	 * 
 	 * @return ArrayList of Seat objects.
 	 */
-	public ArrayList<Seat> getSeats() {
+	public ArrayList<Seat> getSeats()
+	{
 		return this.seats;
 	}
 
@@ -56,7 +64,8 @@ public class Row {
 	 * 
 	 * @param rowNumber
 	 */
-	public void setRowNumber(int rowNumber) {
+	public void setRowNumber(int rowNumber)
+	{
 		this.rowNumber = rowNumber;
 	}
 
