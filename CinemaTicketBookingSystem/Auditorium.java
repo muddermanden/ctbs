@@ -2,42 +2,46 @@ package CinemaTicketBookingSystem;
 
 import java.util.ArrayList;
 
+/**
+ * The Auditorium class is used to create Auditorium objects.
+ */
 public class Auditorium
 {
 
-	// constants; they never change while the programming is running
+	// class constants; they never change while the application is running
 	static final int SEAT_CHARACTER_WIDTH = 3;
 	static final int SPACE_BETWEEN_ISLES = 5;
 	static final int NUMBER_OF_ROWS_IN_AUDITORIUM = 12;
 	static final int NUMBER_OF_SEATS_IN_EACH_ROW = 10;
+	static final int WALL_SIZE = NUMBER_OF_SEATS_IN_EACH_ROW * SEAT_CHARACTER_WIDTH + 5;
+	static final char BOOKED_SYMBOL = '▓';
+	static final char UNBOOOKED_SYMBOL = '░';
 
+	
 	/**
-	 * private instance variables
+	 * Collection of rows in the auditorium.
 	 */
-
 	private final ArrayList<Row> rowsInAuditorium;
-	private final int wallSize;
 
 
 	/**
-	 * The constructor initializes the internal fields of the instantiated
-	 * Auditorium object.
+	 * Class constructor.
 	 * 
-	 * @param numberOfRowsInAuditorium
-	 *            expects an integer with the number of rows to create in the
-	 *            auditorium
-	 * @param numberOfSeatsInEachRow
-	 *            expects an integer with the number of seats in each row
+	 * @param numberOfRowsInAuditorium Number of rows to create in this auditorium.
+	 * @param numberOfSeatsInEachRow Number of seats to create in each row.
 	 */
 	Auditorium()
 	{
 		this.rowsInAuditorium = new ArrayList<Row>();
-		this.wallSize = NUMBER_OF_SEATS_IN_EACH_ROW * SEAT_CHARACTER_WIDTH + 5;
-		setupRows(NUMBER_OF_SEATS_IN_EACH_ROW);
+		setupSeatsInRows();
 		addMockData();
 	}
 
 
+	/**
+	 * Returns the number of seats in the auditorium that are not booked.
+	 * @return The number of seats.
+	 */
 	public int getNumberOfAvailableSeats()
 	{
 		int numberOfSeatsAvailable = 0;
@@ -53,6 +57,12 @@ public class Auditorium
 	}
 
 
+	/**
+	 * Generates mock data. A random number of seats are marked as booked in random positions.
+	 * If the same seat is randomly picked again the algorithm will try again (continue).
+	 * The algorithm may theoretically take a long time to complete since it could *randomly*
+	 * try to book the same seat again and again – in which case the algorithm will run forever.
+	 */
 	private void addMockData()
 	{
 		int a = (int) (Math.random() * NUMBER_OF_ROWS_IN_AUDITORIUM * NUMBER_OF_SEATS_IN_EACH_ROW);
@@ -76,11 +86,13 @@ public class Auditorium
 
 
 	/**
-	 * description
+	 * Prints an overview of the auditorium that shows the seat availability. 
+	 * The auditorium is printed in ASCII characters as a 2-by-2 matrix with seat numbers in the top
+	 * and row numbers in the left side.
 	 */
 	public void displayAuditoriumOverview()
 	{
-		// draw a wall with a screen
+		// draw a wall (with screen)
 		displayWall(true);
 
 		for (Row row : this.rowsInAuditorium)
@@ -108,38 +120,20 @@ public class Auditorium
 			// show the seats based on booking status
 			for (Seat seat : row.getSeats())
 			{
-				if (seat.getIsBooked())
-				{
-					System.out.print("[▓]");
-				}
-				else
-				{
-					System.out.print("[░]");
-				}
+				char status = seat.getIsBooked() ? BOOKED_SYMBOL : UNBOOOKED_SYMBOL;
+				System.out.print("[" + status + "]");
 			}
 			System.out.println();
 		}
 
 		// draw a wall (without screen)
-		displayPlainWall();
-	}
-
-
-	/**
-	 * Display a plain wall (without the screen). Behaves like invoking
-	 * displayWall(false) directly.
-	 */
-	private void displayPlainWall()
-	{
 		displayWall(false);
 	}
 
 
 	/**
-	 * Display an ASCII representation of the auditorium.
-	 * 
-	 * @param hasScreen
-	 *            indicates whether a screen should be drawn as part of the wall
+	 * Prints a wall as a line of characters.
+	 * @param hasScreen True if the drawn wall contains a movie screen.
 	 */
 	private void displayWall(boolean hasScreen)
 	{
@@ -147,7 +141,7 @@ public class Auditorium
 		System.out.print("+");
 
 		// draw the wall itself one char at a time
-		for (int i = 0; i < this.wallSize; i++)
+		for (int i = 0; i < WALL_SIZE; i++)
 		{
 
 			// if the wall has a screen; draw it from the first seat until the
@@ -171,12 +165,10 @@ public class Auditorium
 
 
 	/**
-	 * Accessor for a specific row. Prevents direct access to the values, which
-	 * in this case allows us to add some business logic, e.g. by subtracting
-	 * one from the row number in order to match the index number.
-	 * 
-	 * @param rowNumber
-	 * @return
+	 * Returns a row object from the row number passed as an argument.
+	 * @param rowNumber The number of the row. Counting from 1.
+	 * @return The Row object with the <code>rowNumber</code>
+	 * @throws WrongUserInputException Is thrown if the row number does not exist.
 	 */
 	public Row getRow(int rowNumber) throws WrongUserInputException
 	{
@@ -193,8 +185,7 @@ public class Auditorium
 
 
 	/**
-	 * Accessor for rows. Prevents direct access to values.
-	 * 
+	 * Returns the collection of row objects in this auditorium.
 	 * @return
 	 */
 	private ArrayList<Row> getRows()
@@ -203,7 +194,10 @@ public class Auditorium
 	}
 
 
-	private void setupRows(int numberOfSeatsInEachRow)
+	/**
+	 * Populates all the rows in this auditorium with <code>Seat</code> objects.
+	 */
+	private void setupSeatsInRows()
 	{
 		Row currentRow;
 		for (int i = 1; i <= NUMBER_OF_ROWS_IN_AUDITORIUM; i++)
