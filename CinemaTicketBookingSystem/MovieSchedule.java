@@ -100,6 +100,7 @@ public class MovieSchedule
 			if (presentation.getPresentationID() == presentationID)
 			{
 				match = presentation;
+				break;
 			}
 		}
 		return match;
