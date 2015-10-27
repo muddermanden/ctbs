@@ -10,7 +10,7 @@ import java.util.UUID;
 
 public class Booking
 {
-
+	// declare private fields
 	private Customer customer;
 	private boolean isConfirmed;
 	private int numberOfSeats;
@@ -18,12 +18,19 @@ public class Booking
 	private ArrayList<Seat> seatsBooked;
 	private String bookingReference;
 
-
+	// the constructor; called when creating new object instance of Booking
 	public Booking()
 	{
+		// 
 		this.customer = new Customer();
+
+		// initialize the 
 		this.seatsBooked = new ArrayList<Seat>();
+		
+		// not confirmed as default
 		this.isConfirmed = false;
+
+		// generate a booking reference number
 		setBookingReference();
 	}
 
@@ -204,7 +211,7 @@ public class Booking
 
 	private Presentation promptForPresentationSelection()
 	{
-
+		// repeat the loop until displayPresentationMenu returns a Presentation object
 		do
 		{
 			Presentation selectedPresentation = displayPresentationMenu();

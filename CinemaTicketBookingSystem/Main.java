@@ -2,19 +2,18 @@ package CinemaTicketBookingSystem;
 
 public class Main
 {
-
 	private static MovieSchedule movieSchedule;
 
 
 	/**
-	 * 
-	 * @param args
+	 * Starts the program.
+	 * @param args The arguments passed to the program. Takes no arguments.
 	 */
 	public static void main(String[] args)
 	{
 		// setup the application with mock data for demonstration purpose
 		Main.setupMockData();
-
+		
 		Booking myBooking = new Booking();
 		myBooking.startNewBooking();
 	}
@@ -22,7 +21,6 @@ public class Main
 
 	public static void setupMockData()
 	{
-
 		// get the movie schedule instance
 		Main.movieSchedule = MovieSchedule.getInstance();
 
