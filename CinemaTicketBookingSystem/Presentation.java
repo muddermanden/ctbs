@@ -13,7 +13,7 @@ public class Presentation implements Comparable<Presentation>
 	private int presentationID;
 
 
-	Presentation(Movie movie, int year, int month, int day, int hour, int minute)
+	public Presentation(Movie movie, int year, int month, int day, int hour, int minute)
 	{
 		this.presentationID = maxPresentationID = maxPresentationID + 1;
 		this.auditorium = new Auditorium();

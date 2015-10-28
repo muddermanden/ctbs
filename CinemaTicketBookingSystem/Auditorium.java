@@ -30,7 +30,7 @@ public class Auditorium
 	 * @param numberOfRowsInAuditorium Number of rows to create in this auditorium.
 	 * @param numberOfSeatsInEachRow Number of seats to create in each row.
 	 */
-	Auditorium()
+	public Auditorium()
 	{
 		this.rowsInAuditorium = new ArrayList<Row>();
 		setupSeatsInRows();

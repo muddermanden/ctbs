@@ -7,7 +7,7 @@ public class Movie
 	private int runtime;
 
 
-	Movie(String title, int runtime)
+	public Movie(String title, int runtime)
 	{
 		this.setTitle(title);
 		this.setRuntime(runtime);
