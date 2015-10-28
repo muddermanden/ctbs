@@ -47,7 +47,6 @@ public class Main
 			if (user.getUsername().equals(username) && user.getPassword().equals(password))
 			{
 				match = user;
-				// break;
 			}
 		}
 		return match;
