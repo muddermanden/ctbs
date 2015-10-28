@@ -282,7 +282,6 @@ public class Booking
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	}
 
 
