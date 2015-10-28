@@ -8,16 +8,15 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.UUID;
 
-
 public class Booking
 {
 
+	private String bookingReference;
 	private Customer customer;
 	private boolean isConfirmed;
 	private int numberOfSeats;
 	private Presentation presentation;
 	private ArrayList<Seat> seatsBooked;
-	private String bookingReference;
 
 
 	public Booking(Customer customer)
@@ -29,11 +28,23 @@ public class Booking
 	}
 
 
+	public void startNewBooking()
+	{
+		promptForPresentationSelection();
+		promptForNumberOfSeats();
+		getPresentation().getAuditorium().displayAuditoriumOverview();
+		promptForSeatSelection();
+		promptForCustomerInfo();
+		displayBookingInformation();
+		confirmBooking();
+	}
+
+
 	/**
 	 * @param row
-	 *            is the row that customer has selected
+	 *        is the row that customer has selected
 	 * @param seat
-	 *            is the seat that customer has selected
+	 *        is the seat that customer has selected
 	 */
 	private void addSeatToBooking(Seat seat)
 	{
@@ -41,21 +52,9 @@ public class Booking
 	}
 
 
-	private void setBookingReference()
-	{
-		this.bookingReference = UUID.randomUUID().toString().substring(0, 8).toUpperCase();
-	}
-
-
-	private String getBookingReference()
-	{
-		return this.bookingReference;
-	}
-
-
 	private void confirmBooking()
 	{
-		
+
 		char response = Utility.promptUserInputString("Type 'y' to confirm, or any key to cancel.").charAt(0);
 		if (response == 'y')
 		{
@@ -136,9 +135,21 @@ public class Booking
 	}
 
 
+	private String getBookingReference()
+	{
+		return this.bookingReference;
+	}
+
+
 	private Customer getCustomer()
 	{
 		return this.customer;
+	}
+
+
+	private boolean getIsConfirmed()
+	{
+		return this.isConfirmed;
 	}
 
 
@@ -171,18 +182,6 @@ public class Booking
 			i++;
 		}
 		return str;
-	}
-
-
-	private void setIsConfirmed(boolean value)
-	{
-		this.isConfirmed = value;
-	}
-
-
-	private boolean getIsConfirmed()
-	{
-		return this.isConfirmed;
 	}
 
 
@@ -250,19 +249,6 @@ public class Booking
 	}
 
 
-
-	private void setNumberOfSeats(int numberOfSeats)
-	{
-		this.numberOfSeats = numberOfSeats;
-	}
-
-
-	private void setPresentation(Presentation presentation)
-	{
-		this.presentation = presentation;
-	}
-
-
 	private void saveBookingToFile()
 	{
 		PrintWriter writer;
@@ -285,15 +271,27 @@ public class Booking
 	}
 
 
-	public void startNewBooking()
+	private void setBookingReference()
 	{
-		promptForPresentationSelection();
-		promptForNumberOfSeats();
-		getPresentation().getAuditorium().displayAuditoriumOverview();
-		promptForSeatSelection();
-		promptForCustomerInfo();
-		displayBookingInformation();
-		confirmBooking();
+		this.bookingReference = UUID.randomUUID().toString().substring(0, 8).toUpperCase();
+	}
+
+
+	private void setIsConfirmed(boolean value)
+	{
+		this.isConfirmed = value;
+	}
+
+
+	private void setNumberOfSeats(int numberOfSeats)
+	{
+		this.numberOfSeats = numberOfSeats;
+	}
+
+
+	private void setPresentation(Presentation presentation)
+	{
+		this.presentation = presentation;
 	}
 
 }
