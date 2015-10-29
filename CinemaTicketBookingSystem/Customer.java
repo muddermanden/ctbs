@@ -3,8 +3,13 @@ package CinemaTicketBookingSystem;
 /**
  * A customer is a representation of the person who is making the booking.
  */
-public class Customer
+public class Customer extends User
 {
+	public Customer(String username, String password) {
+		super(username, password);
+	}
+
+
 	/**
 	 * The name of the customer is used to identify the booking if a customer
 	 * has forgotten his booking reference.

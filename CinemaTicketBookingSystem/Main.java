@@ -7,22 +7,36 @@ public class Main
 
 	/**
 	 * Starts the program.
-	 * @param args The arguments passed to the program. Takes no arguments.
+	 * 
+	 * @param args
+	 *        The arguments passed to the program. Takes no arguments.
 	 */
 	public static void main(String[] args)
 	{
 		// setup the application with mock data for demonstration purpose
-		Main.setupMockData();
-		
-		Booking myBooking = new Booking();
-		myBooking.startNewBooking();
+		setupMockData();
+
+		User user = User.login();
+		if (user instanceof Customer)
+		{
+			Booking myBooking = new Booking((Customer) user);
+			myBooking.startNewBooking();
+		}
+		else if (user instanceof Employee)
+		{
+			((Employee) user).checkBooking();
+		}
+		else
+		{
+			System.out.println("Unknown username or password.");
+		}
 	}
 
 
 	public static void setupMockData()
 	{
 		// get the movie schedule instance
-		Main.movieSchedule = MovieSchedule.getInstance();
+		movieSchedule = MovieSchedule.getInstance();
 
 		// create some movies
 		Movie terminator1 = new Movie("The Terminator", 107);
@@ -35,5 +49,8 @@ public class Main
 		movieSchedule.addPresentationToSchedule(frida, 2015, 11, 19, 11, 30);
 		movieSchedule.addPresentationToSchedule(frida, 2015, 11, 25, 11, 30);
 		movieSchedule.addPresentationToSchedule(terminator1, 2015, 11, 26, 11, 30);
+
+		User.addUser(new Customer("John", "1234"));
+		User.addUser(new Employee("Jane", "abc"));
 	}
 }

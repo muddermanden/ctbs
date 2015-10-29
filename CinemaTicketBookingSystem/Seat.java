@@ -8,7 +8,7 @@ public class Seat
 	private Row row;
 
 
-	Seat(Row row, int seatNumber)
+	public Seat(Row row, int seatNumber)
 	{
 		setRow(row);
 		setSeatNumber(seatNumber);

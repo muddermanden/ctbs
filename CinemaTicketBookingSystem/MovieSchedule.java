@@ -38,26 +38,14 @@ public class MovieSchedule
 
 
 	/**
-	 * Add a Presentation to the MovieSchedule.
+	 * Adds a Presentation to the MovieSchedule.
 	 * 
-	 * @param movie
-	 *            expects a Movie object. The Movie that will be displayed on
-	 *            the Presentation.
-	 * @param year
-	 *            expects an integer. The year part of the date when the
-	 *            Presentation is displayed.
-	 * @param month
-	 *            expects an integer. The month part of the date when the
-	 *            Presentation is displayed.
-	 * @param day
-	 *            expects an integer. The day part of the date when the
-	 *            Presentation is displayed.
-	 * @param hour
-	 *            expects an integer. The hour of the day when the Presentation
-	 *            is displayed.
-	 * @param minute
-	 *            expects an integer. The minute of the hour when the
-	 *            Presentation is displayed.
+	 * @param movie The Movie that will be displayed on the Presentation.
+	 * @param year The year part of the date when the Presentation is displayed.
+	 * @param month The month part of the date when the Presentation is displayed.
+	 * @param day The day part of the date when the Presentation is displayed.
+	 * @param hour expects an integer. The hour of the day when the Presentation is displayed.
+	 * @param minute expects an integer. The minute of the hour when the Presentation is displayed.
 	 */
 	public void addPresentationToSchedule(Movie movie, int year, int month, int day, int hour, int minute)
 	{
@@ -100,6 +88,7 @@ public class MovieSchedule
 			if (presentation.getPresentationID() == presentationID)
 			{
 				match = presentation;
+				break;
 			}
 		}
 		return match;

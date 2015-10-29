@@ -10,36 +10,41 @@ import java.util.UUID;
 
 public class Booking
 {
-	// declare private fields
+
+	private String bookingReference;
 	private Customer customer;
 	private boolean isConfirmed;
 	private int numberOfSeats;
 	private Presentation presentation;
 	private ArrayList<Seat> seatsBooked;
-	private String bookingReference;
 
-	// the constructor; called when creating new object instance of Booking
-	public Booking()
+
+	public Booking(Customer customer)
 	{
-		// 
-		this.customer = new Customer();
-
-		// initialize the 
+		this.customer = customer;
 		this.seatsBooked = new ArrayList<Seat>();
-		
-		// not confirmed as default
 		this.isConfirmed = false;
-
-		// generate a booking reference number
 		setBookingReference();
+	}
+
+
+	public void startNewBooking()
+	{
+		promptForPresentationSelection();
+		promptForNumberOfSeats();
+		getPresentation().getAuditorium().displayAuditoriumOverview();
+		promptForSeatSelection();
+		promptForCustomerInfo();
+		displayBookingInformation();
+		confirmBooking();
 	}
 
 
 	/**
 	 * @param row
-	 *            is the row that customer has selected.
+	 *        is the row that customer has selected
 	 * @param seat
-	 *            is the seat that customer has selected.
+	 *        is the seat that customer has selected
 	 */
 	private void addSeatToBooking(Seat seat)
 	{
@@ -47,21 +52,10 @@ public class Booking
 	}
 
 
-	private void setBookingReference()
-	{
-		this.bookingReference = UUID.randomUUID().toString().substring(0, 8).toUpperCase();
-	}
-
-
-	private String getBookingReference()
-	{
-		return this.bookingReference;
-	}
-
-
 	private void confirmBooking()
 	{
-		char response = promptUserInputString("Type 'y' to confirm, or any key to cancel.").charAt(0);
+
+		char response = Utility.promptUserInputString("Type 'y' to confirm, or any key to cancel.").charAt(0);
 		if (response == 'y')
 		{
 			// mark the booking as confirmed
@@ -131,7 +125,7 @@ public class Booking
 		movieSchedule.displayMovieSchedule();
 
 		// ask the user to enter a number of choice
-		int input = promptUserInputInteger("Enter the number of the presentation you will see:");
+		int input = Utility.promptUserInputInteger("Enter the number of the presentation you will see:");
 
 		// get the presentation with the ID the user entered
 		myPresentation = movieSchedule.matchPresentation(input);
@@ -141,9 +135,21 @@ public class Booking
 	}
 
 
+	private String getBookingReference()
+	{
+		return this.bookingReference;
+	}
+
+
 	private Customer getCustomer()
 	{
 		return this.customer;
+	}
+
+
+	private boolean getIsConfirmed()
+	{
+		return this.isConfirmed;
 	}
 
 
@@ -179,24 +185,12 @@ public class Booking
 	}
 
 
-	private void setIsConfirmed(boolean value)
-	{
-		this.isConfirmed = value;
-	}
-
-
-	private boolean getIsConfirmed()
-	{
-		return this.isConfirmed;
-	}
-
-
 	private void promptForCustomerInfo()
 	{
-		String fullName = promptUserInputString("Enter your full name:");
+		String fullName = Utility.promptUserInputString("Enter your full name:");
 		getCustomer().setName(fullName);
 
-		String phoneNumber = promptUserInputString("Enter your phone number:");
+		String phoneNumber = Utility.promptUserInputString("Enter your phone number:");
 		getCustomer().setPhoneNumber(phoneNumber);
 	}
 
@@ -204,14 +198,14 @@ public class Booking
 	private void promptForNumberOfSeats()
 	{
 		int numberOfSeats = 0;
-		numberOfSeats = promptUserInputInteger("How many tickets do you want?");
+		numberOfSeats = Utility.promptUserInputInteger("How many tickets do you want?");
 		setNumberOfSeats(numberOfSeats);
 	}
 
 
 	private Presentation promptForPresentationSelection()
 	{
-		// repeat the loop until displayPresentationMenu returns a Presentation object
+
 		do
 		{
 			Presentation selectedPresentation = displayPresentationMenu();
@@ -232,10 +226,10 @@ public class Booking
 
 			try
 			{
-				int myRowNumber = promptUserInputInteger("Enter row number for ticket #" + i + ":");
+				int myRowNumber = Utility.promptUserInputInteger("Enter row number for ticket #" + i + ":");
 				Row myRow = getPresentation().getAuditorium().getRow(myRowNumber);
 
-				int mySeatNumber = promptUserInputInteger("Select seat number for ticket #" + i + ":");
+				int mySeatNumber = Utility.promptUserInputInteger("Select seat number for ticket #" + i + ":");
 				Seat mySeat = myRow.getSeat(mySeatNumber);
 				mySeat.setIsBooked(true);
 
@@ -252,75 +246,6 @@ public class Booking
 			i++;
 		}
 		while (i <= getNumberOfSeats());
-	}
-
-
-	private int promptUserInputInteger(String message)
-	{
-		Scanner scanner;
-		int userInput = 0;
-
-		do
-		{
-			System.out.println(message);
-			try
-			{
-				scanner = new Scanner(System.in);
-				userInput = scanner.nextInt();
-
-				if (userInput > 0)
-				{
-					return userInput;
-				}
-				else
-				{
-					System.out.println("Please enter a positive number.");
-				}
-
-			}
-			catch (InputMismatchException e)
-			{
-				System.out.println("Please enter number.");
-			}
-		}
-		while (true);
-	}
-
-
-	private String promptUserInputString(String message)
-	{
-		Scanner scanner;
-		String userInput;
-
-		do
-		{
-			System.out.println(message);
-
-			scanner = new Scanner(System.in);
-			userInput = scanner.nextLine();
-
-			if (userInput.length() > 0)
-			{
-				return userInput;
-			}
-			else
-			{
-				System.out.println("Please enter a string.");
-			}
-		}
-		while (true);
-	}
-
-
-	private void setNumberOfSeats(int numberOfSeats)
-	{
-		this.numberOfSeats = numberOfSeats;
-	}
-
-
-	private void setPresentation(Presentation presentation)
-	{
-		this.presentation = presentation;
 	}
 
 
@@ -343,19 +268,30 @@ public class Booking
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	}
 
 
-	public void startNewBooking()
+	private void setBookingReference()
 	{
-		promptForPresentationSelection();
-		promptForNumberOfSeats();
-		getPresentation().getAuditorium().displayAuditoriumOverview();
-		promptForSeatSelection();
-		promptForCustomerInfo();
-		displayBookingInformation();
-		confirmBooking();
+		this.bookingReference = UUID.randomUUID().toString().substring(0, 8).toUpperCase();
+	}
+
+
+	private void setIsConfirmed(boolean value)
+	{
+		this.isConfirmed = value;
+	}
+
+
+	private void setNumberOfSeats(int numberOfSeats)
+	{
+		this.numberOfSeats = numberOfSeats;
+	}
+
+
+	private void setPresentation(Presentation presentation)
+	{
+		this.presentation = presentation;
 	}
 
 }
