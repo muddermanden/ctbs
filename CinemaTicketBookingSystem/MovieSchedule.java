@@ -57,7 +57,7 @@ public class MovieSchedule
 	}
 
 
-	public void displayMovieSchedule()
+	private void displayMovieSchedule()
 	{
 		System.out.println("Movie Presentation Schedule:");
 
@@ -65,6 +65,25 @@ public class MovieSchedule
 		{
 			System.out.println(movieSchedule.getPresentation(i));
 		}
+	}
+	
+	
+	public Presentation displayPresentationMenu()
+	{
+		// the users choice
+		Presentation myPresentation = null;
+
+		// ask the movie schedule to display a schedule
+		displayMovieSchedule();
+
+		// ask the user to enter a number of choice
+		int input = Utility.promptUserInputInteger("Enter the number of the presentation you will see:");
+
+		// get the presentation with the ID the user entered
+		myPresentation = matchPresentation(input);
+
+		return myPresentation;
+
 	}
 
 
@@ -80,7 +99,7 @@ public class MovieSchedule
 	}
 
 
-	public Presentation matchPresentation(int presentationID)
+	private Presentation matchPresentation(int presentationID)
 	{
 		Presentation match = null;
 		for (Presentation presentation : getPresentations())
