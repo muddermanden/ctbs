@@ -5,30 +5,30 @@
     autoSize="true">    
     <position height="0" width="0" x="0" y="0"/>    
     <execution id="2">      
-      <position height="1784" width="0" x="0" y="111"/>    
+      <position height="1125" width="0" x="0" y="111"/>    
     </execution>    
     <execution id="4">      
-      <position height="1721" width="0" x="0" y="153"/>    
+      <position height="1062" width="0" x="0" y="153"/>    
     </execution>    
-    <execution id="19">      
+    <execution id="17">      
       <position height="63" width="141" x="5" y="78"/>    
     </execution>  
   </object>  
-  <object id="22" language="java" name="CinemaTicketBookingSystem.Movie" project="CinemaTicketBookingSystem" 
+  <object id="20" language="java" name="CinemaTicketBookingSystem.Movie" project="CinemaTicketBookingSystem" 
     file="/CinemaTicketBookingSystem/CinemaTicketBookingSystem/Movie.java" binary="false" label="movie" type="class" 
     autoSize="true">    
     <position height="0" width="0" x="0" y="0"/>    
     <execution id="6">      
       <position height="125" width="0" x="0" y="189"/>    
     </execution>    
-    <execution id="24">      
+    <execution id="22">      
       <position height="21" width="7" x="217" y="231"/>    
     </execution>    
-    <execution id="26">      
+    <execution id="24">      
       <position height="21" width="7" x="217" y="272"/>    
     </execution>  
   </object>  
-  <object id="27" language="java" name="CinemaTicketBookingSystem.Customer" project="CinemaTicketBookingSystem" 
+  <object id="25" language="java" name="CinemaTicketBookingSystem.Customer" project="CinemaTicketBookingSystem" 
     file="/CinemaTicketBookingSystem/CinemaTicketBookingSystem/Customer.java" binary="false" label="customer" 
     type="class" autoSize="true">    
     <position height="0" width="0" x="0" y="0"/>    
@@ -36,155 +36,152 @@
       <position height="126" width="0" x="0" y="360"/>    
     </execution>  
   </object>  
-  <object id="30" language="java" name="CinemaTicketBookingSystem.User" project="CinemaTicketBookingSystem" 
+  <object id="28" language="java" name="CinemaTicketBookingSystem.User" project="CinemaTicketBookingSystem" 
     file="/CinemaTicketBookingSystem/CinemaTicketBookingSystem/User.java" binary="false" label="user" type="class" 
     autoSize="true">    
     <position height="0" width="0" x="0" y="0"/>    
-    <execution id="29">      
+    <execution id="27">      
       <position height="84" width="0" x="0" y="381"/>    
     </execution>    
-    <execution id="32">      
+    <execution id="30">      
       <position height="21" width="0" x="0" y="423"/>    
     </execution>    
     <execution id="8">      
       <position height="21" width="141" x="440" y="326"/>    
     </execution>    
     <execution id="14">      
-      <position height="240" width="141" x="440" y="900"/>    
+      <position height="198" width="141" x="440" y="948"/>    
+    </execution>    
+    <execution id="36">      
+      <position height="21" width="7" x="507" y="1053"/>    
     </execution>    
     <execution id="38">      
-      <position height="21" width="7" x="507" y="1005"/>    
-    </execution>    
-    <execution id="40">      
-      <position height="63" width="7" x="507" y="1056"/>    
+      <position height="21" width="7" x="507" y="1104"/>    
     </execution>  
   </object>  
-  <object id="43" language="java" name="CinemaTicketBookingSystem.MovieSchedule" project="CinemaTicketBookingSystem" 
+  <object id="39" language="java" name="CinemaTicketBookingSystem.MovieSchedule" project="CinemaTicketBookingSystem" 
     file="/CinemaTicketBookingSystem/CinemaTicketBookingSystem/MovieSchedule.java" binary="false" label="movieSchedule" 
     type="class" autoSize="true">    
     <position height="0" width="0" x="0" y="0"/>    
     <execution id="12">      
-      <position height="429" width="0" x="0" y="473"/>    
+      <position height="429" width="0" x="0" y="516"/>    
     </execution>    
-    <execution id="21">      
+    <execution id="19">      
       <position height="21" width="141" x="150" y="99"/>    
     </execution>    
-    <execution id="46">      
-      <position height="352" width="141" x="585" y="1314"/>    
+    <execution id="42">      
+      <position height="352" width="141" x="585" y="1272"/>    
     </execution>    
-    <execution id="48">      
-      <position height="283" width="7" x="652" y="1362"/>    
-    </execution>    
-    <execution id="54">      
-      <position height="84" width="7" x="655" y="1540"/>    
+    <execution id="44">      
+      <position height="283" width="7" x="652" y="1320"/>    
     </execution>    
     <execution id="50">      
-      <position height="84" width="7" x="652" y="1414"/>    
+      <position height="84" width="7" x="655" y="1498"/>    
     </execution>    
-    <execution id="58">      
-      <position height="21" width="7" x="655" y="1456"/>    
+    <execution id="46">      
+      <position height="84" width="7" x="652" y="1372"/>    
     </execution>    
-    <execution id="56">      
-      <position height="21" width="7" x="655" y="1582"/>    
+    <execution id="54">      
+      <position height="21" width="7" x="655" y="1414"/>    
+    </execution>    
+    <execution id="52">      
+      <position height="21" width="7" x="655" y="1540"/>    
     </execution>  
   </object>  
-  <object id="59" language="java" name="CinemaTicketBookingSystem.Presentation" project="CinemaTicketBookingSystem" 
+  <object id="55" language="java" name="CinemaTicketBookingSystem.Presentation" project="CinemaTicketBookingSystem" 
     file="/CinemaTicketBookingSystem/CinemaTicketBookingSystem/Presentation.java" binary="false" label="presentation" 
     type="class" autoSize="true">    
     <position height="0" width="0" x="0" y="0"/>    
-    <execution id="45">      
-      <position height="387" width="0" x="0" y="494"/>    
+    <execution id="41">      
+      <position height="387" width="0" x="0" y="537"/>    
     </execution>    
-    <execution id="62">      
+    <execution id="58">      
       <position height="84" width="0" x="0" y="708"/>    
     </execution>    
-    <execution id="64">      
+    <execution id="60">      
       <position height="21" width="0" x="0" y="750"/>    
     </execution>    
-    <execution id="42">      
-      <position height="21" width="141" x="730" y="1077"/>    
-    </execution>    
-    <execution id="65">      
-      <position height="63" width="141" x="730" y="1727"/>    
+    <execution id="61">      
+      <position height="63" width="141" x="730" y="1685"/>    
     </execution>  
   </object>  
-  <object id="68" language="java" name="CinemaTicketBookingSystem.Auditorium" project="CinemaTicketBookingSystem" 
+  <object id="64" language="java" name="CinemaTicketBookingSystem.Auditorium" project="CinemaTicketBookingSystem" 
     file="/CinemaTicketBookingSystem/CinemaTicketBookingSystem/Auditorium.java" binary="false" label="auditorium" 
     type="class" autoSize="true">    
     <position height="0" width="0" x="0" y="0"/>    
-    <execution id="61">      
-      <position height="345" width="0" x="0" y="515"/>    
+    <execution id="57">      
+      <position height="345" width="0" x="0" y="558"/>    
+    </execution>    
+    <execution id="66">      
+      <position height="282" width="0" x="0" y="600"/>    
     </execution>    
     <execution id="70">      
-      <position height="282" width="0" x="0" y="557"/>    
+      <position height="73" width="0" x="0" y="788"/>    
     </execution>    
-    <execution id="74">      
-      <position height="73" width="0" x="0" y="745"/>    
-    </execution>    
-    <execution id="67">      
-      <position height="21" width="141" x="875" y="1748"/>    
+    <execution id="63">      
+      <position height="21" width="141" x="875" y="1706"/>    
     </execution>  
   </object>  
-  <object id="77" language="java" name="CinemaTicketBookingSystem.Row" project="CinemaTicketBookingSystem" 
+  <object id="73" language="java" name="CinemaTicketBookingSystem.Row" project="CinemaTicketBookingSystem" 
     file="/CinemaTicketBookingSystem/CinemaTicketBookingSystem/Row.java" binary="false" label="row" type="class" 
     autoSize="true">    
     <position height="0" width="0" x="0" y="0"/>    
-    <execution id="72">      
-      <position height="84" width="0" x="0" y="588"/>    
+    <execution id="68">      
+      <position height="84" width="0" x="0" y="631"/>    
     </execution>    
-    <execution id="79">      
-      <position height="21" width="0" x="0" y="630"/>    
+    <execution id="75">      
+      <position height="21" width="0" x="0" y="673"/>    
     </execution>  
   </object>  
-  <object id="80" language="java" name="CinemaTicketBookingSystem.Seat" project="CinemaTicketBookingSystem" 
+  <object id="76" language="java" name="CinemaTicketBookingSystem.Seat" project="CinemaTicketBookingSystem" 
     file="/CinemaTicketBookingSystem/CinemaTicketBookingSystem/Seat.java" binary="false" label="seat" type="class" 
     autoSize="true">    
     <position height="0" width="0" x="0" y="0"/>    
-    <execution id="76">      
-      <position height="21" width="0" x="0" y="776"/>    
+    <execution id="72">      
+      <position height="21" width="0" x="0" y="819"/>    
     </execution>  
   </object>  
-  <object id="81" language="java" name="CinemaTicketBookingSystem.Utility" project="CinemaTicketBookingSystem" 
+  <object id="77" language="java" name="CinemaTicketBookingSystem.Utility" project="CinemaTicketBookingSystem" 
     file="/CinemaTicketBookingSystem/CinemaTicketBookingSystem/Utility.java" binary="false" label="utility" type="class" 
     autoSize="true">    
     <position height="0" width="0" x="0" y="0"/>    
+    <execution id="32">      
+      <position height="21" width="141" x="1310" y="969"/>    
+    </execution>    
     <execution id="34">      
-      <position height="21" width="141" x="1310" y="921"/>    
+      <position height="21" width="141" x="1310" y="1000"/>    
     </execution>    
-    <execution id="36">      
-      <position height="21" width="141" x="1310" y="952"/>    
-    </execution>    
-    <execution id="52">      
-      <position height="21" width="141" x="1310" y="1492"/>    
+    <execution id="48">      
+      <position height="21" width="141" x="1310" y="1450"/>    
     </execution>  
   </object>  
-  <object id="82" language="java" name="CinemaTicketBookingSystem.Booking" project="CinemaTicketBookingSystem" 
+  <object id="78" language="java" name="CinemaTicketBookingSystem.Booking" project="CinemaTicketBookingSystem" 
     file="/CinemaTicketBookingSystem/CinemaTicketBookingSystem/Booking.java" binary="false" label="booking" type="class" 
     autoSize="true">    
     <position height="0" width="0" x="0" y="0"/>    
     <execution id="16">      
-      <position height="84" width="0" x="0" y="1131"/>    
+      <position height="84" width="0" x="0" y="1110"/>    
     </execution>    
-    <execution id="84">      
-      <position height="21" width="0" x="0" y="1173"/>    
+    <execution id="80">      
+      <position height="21" width="0" x="0" y="1152"/>    
     </execution>    
-    <execution id="18">      
-      <position height="604" width="141" x="1455" y="1249"/>    
+    <execution id="81">      
+      <position height="604" width="141" x="1455" y="1207"/>    
+    </execution>    
+    <execution id="83">      
+      <position height="541" width="7" x="1522" y="1249"/>    
     </execution>    
     <execution id="86">      
-      <position height="541" width="7" x="1522" y="1291"/>    
+      <position height="21" width="7" x="1522" y="1562"/>    
     </execution>    
-    <execution id="89">      
-      <position height="21" width="7" x="1522" y="1604"/>    
+    <execution id="88">      
+      <position height="21" width="7" x="1525" y="1606"/>    
     </execution>    
-    <execution id="91">      
-      <position height="21" width="7" x="1525" y="1648"/>    
-    </execution>    
-    <execution id="93">      
-      <position height="105" width="7" x="1525" y="1706"/>    
+    <execution id="90">      
+      <position height="105" width="7" x="1525" y="1664"/>    
     </execution>  
   </object>  
-  <message id="3" operation="setupMockData():void">    
+  <message id="3" operation="createMockData():void">    
     <end type="SOURCE" refId="2"/>    
     <end type="TARGET" refId="4"/>  
   </message>  
@@ -212,136 +209,128 @@
     <end type="SOURCE" refId="4"/>    
     <end type="TARGET" refId="16"/>  
   </message>  
-  <message id="17" operation="startNewBooking():void">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="18"/>  
+  <message id="18" operation="getInstance():CinemaTicketBookingSystem.MovieSchedule" x="83" y="81">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="19"/>  
   </message>  
-  <message id="20" operation="getInstance():CinemaTicketBookingSystem.MovieSchedule" x="83" y="81">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="21"/>  
+  <message id="21" operation="setTitle(java.lang.String):void">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="22"/>  
   </message>  
-  <message id="23" operation="setTitle(java.lang.String):void">    
+  <message id="23" operation="setRuntime(int):void">    
     <end type="SOURCE" refId="6"/>    
     <end type="TARGET" refId="24"/>  
   </message>  
-  <message id="25" operation="setRuntime(int):void">    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="26"/>  
-  </message>  
-  <message id="28" operation="User(java.lang.String,java.lang.String)">    
+  <message id="26" operation="User(java.lang.String,java.lang.String)">    
     <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="29"/>  
+    <end type="TARGET" refId="27"/>  
   </message>  
-  <message id="31" operation="User()">    
-    <end type="SOURCE" refId="29"/>    
+  <message id="29" operation="User()">    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="30"/>  
+  </message>  
+  <message id="31" operation="promptUserInputString(java.lang.String):java.lang.String">    
+    <end type="SOURCE" refId="14"/>    
     <end type="TARGET" refId="32"/>  
   </message>  
   <message id="33" operation="promptUserInputString(java.lang.String):java.lang.String">    
     <end type="SOURCE" refId="14"/>    
     <end type="TARGET" refId="34"/>  
   </message>  
-  <message id="35" operation="promptUserInputString(java.lang.String):java.lang.String">    
+  <message id="35" operation="getUsername():java.lang.String">    
     <end type="SOURCE" refId="14"/>    
     <end type="TARGET" refId="36"/>  
   </message>  
-  <message id="37" operation="getUsername():java.lang.String">    
+  <message id="37" operation="getPassword():java.lang.String">    
     <end type="SOURCE" refId="14"/>    
     <end type="TARGET" refId="38"/>  
   </message>  
-  <message id="39" operation="getPassword():java.lang.String">    
-    <end type="SOURCE" refId="14"/>    
-    <end type="TARGET" refId="40"/>  
-  </message>  
-  <message id="41" operation="getPresentationID():int">    
-    <end type="SOURCE" refId="40"/>    
-    <end type="TARGET" refId="42"/>  
-  </message>  
-  <message id="44" operation="Presentation(CinemaTicketBookingSystem.Movie,int,int,int,int,int)">    
+  <message id="40" operation="Presentation(CinemaTicketBookingSystem.Movie,int,int,int,int,int)">    
     <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="45"/>  
+    <end type="TARGET" refId="41"/>  
   </message>  
-  <message id="47" operation="displayMovieSchedule():void">    
-    <end type="SOURCE" refId="46"/>    
+  <message id="43" operation="displayMovieSchedule():void">    
+    <end type="SOURCE" refId="42"/>    
+    <end type="TARGET" refId="44"/>  
+  </message>  
+  <message id="45" operation="getPresentations():java.util.ArrayList&lt;Presentation&gt;">    
+    <end type="SOURCE" refId="42"/>    
+    <end type="TARGET" refId="46"/>  
+  </message>  
+  <message id="47" operation="promptUserInputInteger(java.lang.String):int">    
+    <end type="SOURCE" refId="44"/>    
     <end type="TARGET" refId="48"/>  
   </message>  
-  <message id="49" operation="getPresentations():java.util.ArrayList&lt;Presentation&gt;">    
-    <end type="SOURCE" refId="46"/>    
+  <message id="49" operation="matchPresentation(int):CinemaTicketBookingSystem.Presentation">    
+    <end type="SOURCE" refId="44"/>    
     <end type="TARGET" refId="50"/>  
   </message>  
-  <message id="51" operation="promptUserInputInteger(java.lang.String):int">    
-    <end type="SOURCE" refId="48"/>    
+  <message id="51" operation="getPresentations():java.util.ArrayList&lt;Presentation&gt;">    
+    <end type="SOURCE" refId="50"/>    
     <end type="TARGET" refId="52"/>  
   </message>  
-  <message id="53" operation="matchPresentation(int):CinemaTicketBookingSystem.Presentation">    
-    <end type="SOURCE" refId="48"/>    
+  <message id="53" operation="getPresentation(int):CinemaTicketBookingSystem.Presentation">    
+    <end type="SOURCE" refId="46"/>    
     <end type="TARGET" refId="54"/>  
   </message>  
-  <message id="55" operation="getPresentations():java.util.ArrayList&lt;Presentation&gt;">    
-    <end type="SOURCE" refId="54"/>    
-    <end type="TARGET" refId="56"/>  
+  <message id="56" operation="Auditorium()">    
+    <end type="SOURCE" refId="41"/>    
+    <end type="TARGET" refId="57"/>  
   </message>  
-  <message id="57" operation="getPresentation(int):CinemaTicketBookingSystem.Presentation">    
-    <end type="SOURCE" refId="50"/>    
-    <end type="TARGET" refId="58"/>  
+  <message id="59" operation="setDateTime(int,int,int,int,int):void">    
+    <end type="SOURCE" refId="58"/>    
+    <end type="TARGET" refId="60"/>  
   </message>  
-  <message id="60" operation="Auditorium()">    
-    <end type="SOURCE" refId="45"/>    
-    <end type="TARGET" refId="61"/>  
-  </message>  
-  <message id="63" operation="setDateTime(int,int,int,int,int):void">    
-    <end type="SOURCE" refId="62"/>    
-    <end type="TARGET" refId="64"/>  
-  </message>  
-  <message id="66" operation="displayAuditoriumOverview():void">    
-    <end type="SOURCE" refId="65"/>    
-    <end type="TARGET" refId="67"/>  
-  </message>  
-  <message id="69" operation="setupSeatsInRows():void">    
+  <message id="62" operation="displayAuditoriumOverview():void">    
     <end type="SOURCE" refId="61"/>    
+    <end type="TARGET" refId="63"/>  
+  </message>  
+  <message id="65" operation="setupSeatsInRows():void">    
+    <end type="SOURCE" refId="57"/>    
+    <end type="TARGET" refId="66"/>  
+  </message>  
+  <message id="67" operation="Row(int)">    
+    <end type="SOURCE" refId="66"/>    
+    <end type="TARGET" refId="68"/>  
+  </message>  
+  <message id="69" operation="createMockData():void">    
+    <end type="SOURCE" refId="66"/>    
     <end type="TARGET" refId="70"/>  
   </message>  
-  <message id="71" operation="Row(int)">    
+  <message id="71" operation="setIsBooked(boolean):void">    
     <end type="SOURCE" refId="70"/>    
     <end type="TARGET" refId="72"/>  
   </message>  
-  <message id="73" operation="addMockData():void">    
-    <end type="SOURCE" refId="70"/>    
-    <end type="TARGET" refId="74"/>  
+  <message id="74" operation="setRowNumber(int):void">    
+    <end type="SOURCE" refId="68"/>    
+    <end type="TARGET" refId="75"/>  
   </message>  
-  <message id="75" operation="setIsBooked(boolean):void">    
-    <end type="SOURCE" refId="74"/>    
-    <end type="TARGET" refId="76"/>  
-  </message>  
-  <message id="78" operation="setRowNumber(int):void">    
-    <end type="SOURCE" refId="72"/>    
-    <end type="TARGET" refId="79"/>  
-  </message>  
-  <message id="83" operation="setBookingReference():void">    
+  <message id="79" operation="setBookingReference():void">    
     <end type="SOURCE" refId="16"/>    
-    <end type="TARGET" refId="84"/>  
+    <end type="TARGET" refId="80"/>  
   </message>  
-  <message id="85" operation="promptForPresentationSelection():CinemaTicketBookingSystem.Presentation">    
-    <end type="SOURCE" refId="18"/>    
+  <message id="82" operation="promptForPresentationSelection():CinemaTicketBookingSystem.Presentation">    
+    <end type="SOURCE" refId="81"/>    
+    <end type="TARGET" refId="83"/>  
+  </message>  
+  <message id="84" operation="displayPresentationMenu():CinemaTicketBookingSystem.Presentation">    
+    <end type="SOURCE" refId="83"/>    
+    <end type="TARGET" refId="42"/>  
+  </message>  
+  <message id="85" operation="setPresentation(CinemaTicketBookingSystem.Presentation):void">    
+    <end type="SOURCE" refId="83"/>    
     <end type="TARGET" refId="86"/>  
   </message>  
-  <message id="87" operation="displayPresentationMenu():CinemaTicketBookingSystem.Presentation">    
-    <end type="SOURCE" refId="86"/>    
-    <end type="TARGET" refId="46"/>  
+  <message id="87" operation="promptForNumberOfSeats():void">    
+    <end type="SOURCE" refId="83"/>    
+    <end type="TARGET" refId="88"/>  
   </message>  
-  <message id="88" operation="setPresentation(CinemaTicketBookingSystem.Presentation):void">    
-    <end type="SOURCE" refId="86"/>    
-    <end type="TARGET" refId="89"/>  
+  <message id="89" operation="getPresentation():CinemaTicketBookingSystem.Presentation">    
+    <end type="SOURCE" refId="83"/>    
+    <end type="TARGET" refId="90"/>  
   </message>  
-  <message id="90" operation="promptForNumberOfSeats():void">    
-    <end type="SOURCE" refId="86"/>    
-    <end type="TARGET" refId="91"/>  
-  </message>  
-  <message id="92" operation="getPresentation():CinemaTicketBookingSystem.Presentation">    
-    <end type="SOURCE" refId="86"/>    
-    <end type="TARGET" refId="93"/>  
-  </message>  
-  <message id="94" operation="getAuditorium():CinemaTicketBookingSystem.Auditorium">    
-    <end type="SOURCE" refId="93"/>    
-    <end type="TARGET" refId="65"/>  
+  <message id="91" operation="getAuditorium():CinemaTicketBookingSystem.Auditorium">    
+    <end type="SOURCE" refId="90"/>    
+    <end type="TARGET" refId="61"/>  
   </message>
 </sequence-diagram>
