@@ -34,7 +34,7 @@ public class Auditorium
 	{
 		this.rowsInAuditorium = new ArrayList<Row>();
 		setupSeatsInRows();
-		addMockData();
+		createMockData();
 	}
 
 
@@ -58,29 +58,28 @@ public class Auditorium
 
 
 	/**
-	 * Generates mock data. A random number of seats are marked as booked in random positions.
-	 * If the same seat is randomly picked again the algorithm will try again (continue).
-	 * The algorithm may theoretically take a long time to complete since it could *randomly*
-	 * try to book the same seat again and again – in which case the algorithm will run forever.
+	 * Generates mock data. Seats are randomly marked as booked.
 	 */
-	private void addMockData()
+	private void createMockData()
 	{
-		int a = (int) (Math.random() * NUMBER_OF_ROWS_IN_AUDITORIUM * NUMBER_OF_SEATS_IN_EACH_ROW);
-		int i = 0;
-		while (i < a)
+		// loop through the rows in the auditorium
+		for (int i = 1; i <= NUMBER_OF_ROWS_IN_AUDITORIUM; i++)
 		{
-			int b = (int) (Math.random() * NUMBER_OF_ROWS_IN_AUDITORIUM) + 1;
-			int c = (int) (Math.random() * NUMBER_OF_SEATS_IN_EACH_ROW) + 1;
-			try
+			// loop through the seats in each row
+			for(int j = 1; j <= NUMBER_OF_SEATS_IN_EACH_ROW; j++)
 			{
-				getRow(b).getSeat(c).setIsBooked(true);
-				i++;
+				try
+				{
+					// generate a random boolean value
+					boolean value = new java.util.Random().nextBoolean();
+					getRow(i).getSeat(j).setIsBooked(value);
+				}
+				catch (WrongUserInputException e)
+				{
+					e.printStackTrace();
+				}
 			}
-			catch (WrongUserInputException e)
-			{
-				// e.printMessage();
-				continue;
-			}
+			
 		}
 	}
 

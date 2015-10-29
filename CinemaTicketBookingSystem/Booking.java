@@ -4,8 +4,6 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.Scanner;
 import java.util.UUID;
 
 public class Booking
@@ -113,28 +111,6 @@ public class Booking
 	}
 
 
-	private Presentation displayPresentationMenu()
-	{
-		// get the movie schedule
-		MovieSchedule movieSchedule = MovieSchedule.getInstance();
-
-		// the users choice
-		Presentation myPresentation = null;
-
-		// ask the movie schedule to display a schedule
-		movieSchedule.displayMovieSchedule();
-
-		// ask the user to enter a number of choice
-		int input = Utility.promptUserInputInteger("Enter the number of the presentation you will see:");
-
-		// get the presentation with the ID the user entered
-		myPresentation = movieSchedule.matchPresentation(input);
-
-		return myPresentation;
-
-	}
-
-
 	private String getBookingReference()
 	{
 		return this.bookingReference;
@@ -208,7 +184,7 @@ public class Booking
 
 		do
 		{
-			Presentation selectedPresentation = displayPresentationMenu();
+			Presentation selectedPresentation = MovieSchedule.getInstance().displayPresentationMenu();
 			setPresentation(selectedPresentation);
 		}
 		while (getPresentation() == null);
