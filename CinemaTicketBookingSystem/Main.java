@@ -14,7 +14,7 @@ public class Main
 	public static void main(String[] args)
 	{
 		// setup the application with mock data for demonstration purpose
-		setupMockData();
+		createMockData();
 
 		User user = User.login();
 		if (user instanceof Customer)
@@ -33,7 +33,7 @@ public class Main
 	}
 
 
-	public static void setupMockData()
+	public static void createMockData()
 	{
 		// get the movie schedule instance
 		movieSchedule = MovieSchedule.getInstance();
