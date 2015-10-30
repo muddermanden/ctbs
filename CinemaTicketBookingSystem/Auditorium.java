@@ -1,6 +1,7 @@
 package CinemaTicketBookingSystem;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * The Auditorium class is used to create Auditorium objects.
@@ -62,6 +63,8 @@ public class Auditorium
 	 */
 	private void createMockData()
 	{
+		Random random = new Random();
+		
 		// loop through the rows in the auditorium
 		for (int i = 1; i <= NUMBER_OF_ROWS_IN_AUDITORIUM; i++)
 		{
@@ -71,7 +74,7 @@ public class Auditorium
 				try
 				{
 					// generate a random boolean value
-					boolean value = new java.util.Random().nextBoolean();
+					boolean value = random.nextBoolean();
 					getRow(i).getSeat(j).setIsBooked(value);
 				}
 				catch (WrongUserInputException e)

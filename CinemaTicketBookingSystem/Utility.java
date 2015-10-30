@@ -4,9 +4,13 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Utility {
+	
+	// the shared scanner object
+	public static Scanner scanner = new Scanner(System.in);
+	
 	public static int promptUserInputInteger(String message)
 	{
-		Scanner scanner;
+		Scanner scanner = Utility.scanner;
 		int userInput = 0;
 
 		do
@@ -14,7 +18,6 @@ public class Utility {
 			System.out.println(message);
 			try
 			{
-				scanner = new Scanner(System.in);
 				userInput = scanner.nextInt();
 
 				if (userInput > 0)
@@ -45,7 +48,7 @@ public class Utility {
 		{
 			System.out.println(message);
 
-			scanner = new Scanner(System.in);
+			scanner = Utility.scanner;
 			userInput = scanner.nextLine();
 
 			if (userInput.length() > 0)

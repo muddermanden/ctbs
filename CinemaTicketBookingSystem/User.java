@@ -70,17 +70,4 @@ public abstract class User
 	{
 		return this.username;
 	}
-
-
-	protected void setPassword(String password)
-	{
-		this.password = password;
-	}
-
-
-	protected void setUsername(String username)
-	{
-		this.username = username;
-	}
-
 }

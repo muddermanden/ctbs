@@ -163,11 +163,13 @@ public class Booking
 
 	private void promptForCustomerInfo()
 	{
-		String fullName = Utility.promptUserInputString("Enter your full name:");
-		getCustomer().setName(fullName);
+		Customer c = getCustomer();
 
+		String name = Utility.promptUserInputString("Enter your name:");
 		String phoneNumber = Utility.promptUserInputString("Enter your phone number:");
-		getCustomer().setPhoneNumber(phoneNumber);
+		
+		c.setName(name);
+		c.setPhoneNumber(phoneNumber);
 	}
 
 
