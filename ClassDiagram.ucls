@@ -1,233 +1,270 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class-diagram version="1.1.8" icons="true" automaticImage="GIF" always-add-relationships="false" generalizations="true" 
+<class-diagram version="1.1.8" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
   realizations="true" associations="true" dependencies="false" nesting-relationships="true">  
   <class id="1" language="java" name="CinemaTicketBookingSystem.Booking" project="CinemaTicketBookingSystem" 
     file="/CinemaTicketBookingSystem/CinemaTicketBookingSystem/Booking.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="484" width="282" x="523" y="165"/>    
+    <position height="-1" width="-1" x="664" y="261"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
+      sort-features="false" accessors="false" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+      <operations public="true" package="true" protected="true" private="false" static="true"/>    
     </display>  
   </class>  
   <class id="2" language="java" name="CinemaTicketBookingSystem.Customer" project="CinemaTicketBookingSystem" 
     file="/CinemaTicketBookingSystem/CinemaTicketBookingSystem/Customer.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="863" y="769"/>    
+    <position height="-1" width="-1" x="864" y="800"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
+      sort-features="false" accessors="false" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+      <operations public="true" package="true" protected="true" private="false" static="true"/>    
     </display>  
   </class>  
   <class id="3" language="java" name="CinemaTicketBookingSystem.Employee" project="CinemaTicketBookingSystem" 
     file="/CinemaTicketBookingSystem/CinemaTicketBookingSystem/Employee.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1108" y="718"/>    
+    <position height="-1" width="-1" x="1109" y="755"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
+      sort-features="false" accessors="false" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+      <operations public="true" package="true" protected="true" private="false" static="true"/>    
     </display>  
   </class>  
   <class id="4" language="java" name="CinemaTicketBookingSystem.Main" project="CinemaTicketBookingSystem" 
     file="/CinemaTicketBookingSystem/CinemaTicketBookingSystem/Main.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="301" y="75"/>    
+    <position height="-1" width="-1" x="285" y="72"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
+      sort-features="false" accessors="false" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+      <operations public="true" package="true" protected="true" private="false" static="true"/>    
     </display>  
   </class>  
   <class id="5" language="java" name="CinemaTicketBookingSystem.Movie" project="CinemaTicketBookingSystem" 
     file="/CinemaTicketBookingSystem/CinemaTicketBookingSystem/Movie.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="160" width="135" x="41" y="997"/>    
+    <position height="-1" width="-1" x="27" y="816"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
+      sort-features="false" accessors="false" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+      <operations public="true" package="true" protected="true" private="false" static="true"/>    
     </display>  
   </class>  
   <class id="6" language="java" name="CinemaTicketBookingSystem.MovieSchedule" project="CinemaTicketBookingSystem" 
     file="/CinemaTicketBookingSystem/CinemaTicketBookingSystem/MovieSchedule.java" binary="false" corner="BOTTOM_LEFT">    
-    <position height="160" width="329" x="144" y="165"/>    
+    <position height="-1" width="-1" x="285" y="260"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
+      sort-features="false" accessors="false" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+      <operations public="true" package="true" protected="true" private="false" static="true"/>    
     </display>  
   </class>  
   <class id="7" language="java" name="CinemaTicketBookingSystem.Presentation" project="CinemaTicketBookingSystem" 
     file="/CinemaTicketBookingSystem/CinemaTicketBookingSystem/Presentation.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="268" width="216" x="216" y="689"/>    
+    <position height="-1" width="-1" x="286" y="581"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
+      sort-features="false" accessors="false" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+      <operations public="true" package="true" protected="true" private="false" static="true"/>    
     </display>  
   </class>  
   <class id="8" language="java" name="CinemaTicketBookingSystem.Seat" project="CinemaTicketBookingSystem" 
     file="/CinemaTicketBookingSystem/CinemaTicketBookingSystem/Seat.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="621" y="865"/>    
+    <position height="-1" width="-1" x="622" y="827"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
+      sort-features="false" accessors="false" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+      <operations public="true" package="true" protected="true" private="false" static="true"/>    
     </display>  
   </class>  
   <class id="9" language="java" name="CinemaTicketBookingSystem.Row" project="CinemaTicketBookingSystem" 
     file="/CinemaTicketBookingSystem/CinemaTicketBookingSystem/Row.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="691" y="1153"/>    
+    <position height="-1" width="-1" x="619" y="1151"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
+      sort-features="false" accessors="false" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+      <operations public="true" package="true" protected="true" private="false" static="true"/>    
     </display>  
   </class>  
   <class id="10" language="java" name="CinemaTicketBookingSystem.Auditorium" project="CinemaTicketBookingSystem" 
     file="/CinemaTicketBookingSystem/CinemaTicketBookingSystem/Auditorium.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="304" width="267" x="216" y="997"/>    
+    <position height="-1" width="-1" x="287" y="946"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
+      sort-features="false" accessors="false" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+      <operations public="true" package="true" protected="true" private="false" static="true"/>    
     </display>  
   </class>  
   <class id="11" language="java" name="CinemaTicketBookingSystem.User" project="CinemaTicketBookingSystem" 
     file="/CinemaTicketBookingSystem/CinemaTicketBookingSystem/User.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="214" width="165" x="845" y="165"/>    
+    <position height="-1" width="-1" x="989" y="542"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
+      sort-features="false" accessors="false" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+      <operations public="true" package="true" protected="true" private="false" static="true"/>    
     </display>  
   </class>  
   <class id="12" language="java" name="CinemaTicketBookingSystem.Utility" project="CinemaTicketBookingSystem" 
     file="/CinemaTicketBookingSystem/CinemaTicketBookingSystem/Utility.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="88" width="224" x="909" y="964"/>    
+    <position height="-1" width="-1" x="977" y="81"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
+      sort-features="false" accessors="false" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+      <operations public="true" package="true" protected="true" private="false" static="true"/>    
     </display>  
   </class>  
   <class id="13" language="java" name="CinemaTicketBookingSystem.WrongUserInputException" 
     project="CinemaTicketBookingSystem" 
     file="/CinemaTicketBookingSystem/CinemaTicketBookingSystem/WrongUserInputException.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1019" y="1110"/>    
+    <position height="-1" width="-1" x="977" y="203"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
+      sort-features="false" accessors="false" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+      <operations public="true" package="true" protected="true" private="false" static="true"/>    
     </display>  
   </class>  
-  <association id="14">    
-    <bendpoint x="90" y="296"/>    
-    <bendpoint x="89" y="233"/>    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="15" name="movieSchedule"/>      
-      <multiplicity id="16" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="17">    
-    <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="11"/>  
-  </generalization>  
-  <generalization id="18">    
+  <generalization id="14">    
     <end type="SOURCE" refId="2"/>    
     <end type="TARGET" refId="11"/>  
   </generalization>  
-  <association id="19">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="20" name="movie"/>      
-      <multiplicity id="21" minimum="0" maximum="1"/>    
+  <association id="15">    
+    <bendpoint x="52" y="284"/>    
+    <bendpoint x="51" y="221"/>    
+    <end type="SOURCE" refId="6" navigable="false" variant="ASSOCIATION">      
+      <attribute id="16" name="movieSchedule">        
+        <position height="0" width="0" x="-38" y="-12"/>      
+      </attribute>      
+      <multiplicity id="17" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-38" y="-12"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
+    <end type="TARGET" refId="6" navigable="true" variant="ASSOCIATION"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="22">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="23" name="presentation"/>      
-      <multiplicity id="24" minimum="0" maximum="1"/>    
+  <association id="18">    
+    <end type="SOURCE" refId="1" navigable="false" variant="AGGREGATION">      
+      <attribute id="19" name="seatsBooked">        
+        <position height="0" width="0" x="1" y="37"/>      
+      </attribute>      
+      <multiplicity id="20" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="1" y="37"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
+    <end type="TARGET" refId="8" navigable="true" variant="ASSOCIATION"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="25">    
-    <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="26" name="rowsInAuditorium"/>      
-      <multiplicity id="27" minimum="0" maximum="2147483647"/>    
+  <association id="21">    
+    <null/>    
+    <end type="SOURCE" refId="9" navigable="false" variant="ASSOCIATION">      
+      <attribute id="22" name="seats"/>      
+      <multiplicity id="23" minimum="0" maximum="2147483647"/>    
     </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
+    <end type="TARGET" refId="8" navigable="true" variant="ASSOCIATION"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="28">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="29" name="auditorium"/>      
-      <multiplicity id="30" minimum="0" maximum="1"/>    
+  <association id="24">    
+    <end type="SOURCE" refId="1" navigable="false" variant="ASSOCIATION">      
+      <attribute id="25" name="presentation">        
+        <position height="0" width="0" x="-37" y="-236"/>      
+      </attribute>      
+      <multiplicity id="26" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-37" y="-236"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="10" navigable="true"/>    
+    <end type="TARGET" refId="7" navigable="true" variant="ASSOCIATION"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="31">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="32" name="presentations"/>      
-      <multiplicity id="33" minimum="0" maximum="2147483647"/>    
+  <association id="27">    
+    <end type="SOURCE" refId="6" navigable="false" variant="COMPOSITION">      
+      <attribute id="28" name="presentations">        
+        <position height="0" width="0" x="-37" y="-236"/>      
+      </attribute>      
+      <multiplicity id="29" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="-37" y="-236"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
+    <end type="TARGET" refId="7" navigable="true" variant="ASSOCIATION"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="34">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="35" name="customer"/>      
-      <multiplicity id="36" minimum="0" maximum="1"/>    
+  <association id="30">    
+    <bendpoint x="1118" y="592"/>    
+    <bendpoint x="1126" y="527"/>    
+    <end type="SOURCE" refId="11" navigable="false" variant="AGGREGATION">      
+      <attribute id="31" name="users">        
+        <position height="0" width="0" x="62" y="-18"/>      
+      </attribute>      
+      <multiplicity id="32" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="62" y="-18"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="2" navigable="true"/>    
+    <end type="TARGET" refId="11" navigable="true" variant="ASSOCIATION"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="37">    
-    <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="38" name="seats"/>      
-      <multiplicity id="39" minimum="0" maximum="2147483647"/>    
+  <association id="33">    
+    <end type="SOURCE" refId="7" navigable="false" variant="ASSOCIATION">      
+      <attribute id="34" name="movie">        
+        <position height="0" width="0" x="-81" y="-341"/>      
+      </attribute>      
+      <multiplicity id="35" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-81" y="-341"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
+    <end type="TARGET" refId="5" navigable="true" variant="ASSOCIATION"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="40">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="41" name="row"/>      
-      <multiplicity id="42" minimum="0" maximum="1"/>    
+  <association id="36">    
+    <end type="SOURCE" refId="10" navigable="false" variant="COMPOSITION">      
+      <attribute id="37" name="rowsInAuditorium"/>      
+      <multiplicity id="38" minimum="0" maximum="2147483647"/>    
     </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
+    <end type="TARGET" refId="9" navigable="true" variant="ASSOCIATION"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="43">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="44" name="seatsBooked"/>      
-      <multiplicity id="45" minimum="0" maximum="2147483647"/>    
+  <association id="39">    
+    <end type="SOURCE" refId="8" navigable="false" variant="ASSOCIATION">      
+      <attribute id="40" name="row"/>      
+      <multiplicity id="41" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
+    <end type="TARGET" refId="9" navigable="true" variant="ASSOCIATION"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="46">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="47" name="movieSchedule"/>      
-      <multiplicity id="48" minimum="0" maximum="1"/>    
+  <association id="42">    
+    <end type="SOURCE" refId="7" navigable="false" variant="ASSOCIATION">      
+      <attribute id="43" name="auditorium">        
+        <position height="0" width="0" x="2" y="-288"/>      
+      </attribute>      
+      <multiplicity id="44" minimum="0" maximum="1">        
+        <position height="0" width="0" x="2" y="-288"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
+    <end type="TARGET" refId="10" navigable="true" variant="ASSOCIATION"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="49">    
-    <bendpoint x="1061" y="338"/>    
-    <bendpoint x="1061" y="270"/>    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="50" name="users"/>      
-      <multiplicity id="51" minimum="0" maximum="2147483647"/>    
+  <association id="45">    
+    <end type="SOURCE" refId="1" navigable="false" variant="ASSOCIATION">      
+      <attribute id="46" name="customer">        
+        <position height="0" width="0" x="1" y="37"/>      
+      </attribute>      
+      <multiplicity id="47" minimum="0" maximum="1">        
+        <position height="0" width="0" x="1" y="37"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="11" navigable="true"/>    
+    <end type="TARGET" refId="2" navigable="true" variant="ASSOCIATION"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
+  <association id="48">    
+    <end type="SOURCE" refId="4" navigable="false" variant="ASSOCIATION">      
+      <attribute id="49" name="movieSchedule">        
+        <position height="0" width="0" x="-38" y="-12"/>      
+      </attribute>      
+      <multiplicity id="50" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-38" y="-12"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true" variant="ASSOCIATION"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="51">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="11"/>  
+  </generalization>  
   <classifier-display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    

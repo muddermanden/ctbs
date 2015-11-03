@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.1.8" icons="true" automaticImage="PNG">  
+  <object id="1" language="java" name="CinemaTicketBookingSystem.Main" project="CinemaTicketBookingSystem" 
+    file="/CinemaTicketBookingSystem/CinemaTicketBookingSystem/Main.java" binary="false" label="main" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="74" y="0"/>    
+    <execution id="2">      
+      <position height="479" width="141" x="5" y="100"/>    
+    </execution>  
+  </object>  
+  <object id="9" language="java" name="CinemaTicketBookingSystem.User" project="CinemaTicketBookingSystem" 
+    file="/CinemaTicketBookingSystem/CinemaTicketBookingSystem/User.java" binary="false" label="user" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="236" y="0"/>    
+    <execution id="4">      
+      <position height="227" width="141" x="150" y="121"/>    
+    </execution>    
+    <execution id="15">      
+      <position height="21" width="7" x="217" y="247"/>    
+    </execution>    
+    <execution id="17">      
+      <position height="21" width="141" x="150" y="306"/>    
+    </execution>  
+  </object>  
+  <object id="18" language="java" name="CinemaTicketBookingSystem.Utility" project="CinemaTicketBookingSystem" 
+    file="/CinemaTicketBookingSystem/CinemaTicketBookingSystem/Utility.java" binary="false" label="utility" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="452" y="0"/>    
+    <execution id="11">      
+      <position height="21" width="141" x="295" y="142"/>    
+    </execution>    
+    <execution id="13">      
+      <position height="21" width="141" x="295" y="188"/>    
+    </execution>  
+  </object>  
+  <object id="19" language="java" name="CinemaTicketBookingSystem.Booking" project="CinemaTicketBookingSystem" 
+    file="/CinemaTicketBookingSystem/CinemaTicketBookingSystem/Booking.java" binary="false" label="booking" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="526" y="0"/>    
+    <execution id="6">      
+      <position height="84" width="141" x="440" y="378"/>    
+    </execution>    
+    <execution id="8">      
+      <position height="84" width="141" x="440" y="474"/>    
+    </execution>    
+    <execution id="21">      
+      <position height="21" width="7" x="507" y="420"/>    
+    </execution>    
+    <execution id="23">      
+      <position height="21" width="7" x="507" y="516"/>    
+    </execution>  
+  </object>  
+  <message id="3" operation="login():CinemaTicketBookingSystem.User">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </message>  
+  <message id="5" operation="Booking(CinemaTicketBookingSystem.Customer)">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="6"/>  
+  </message>  
+  <message id="7" operation="startNewBooking():void">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="8"/>  
+  </message>  
+  <message id="10" operation="promptUserInputString(java.lang.String):java.lang.String">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="11"/>  
+  </message>  
+  <message id="12" operation="promptUserInputString(java.lang.String):java.lang.String">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="13"/>  
+  </message>  
+  <message id="14" operation="getUsername():java.lang.String">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="15"/>  
+  </message>  
+  <message id="16" operation="getPassword():java.lang.String">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="17"/>  
+  </message>  
+  <message id="20" operation="getBookingReference():java.lang.String">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="21"/>  
+  </message>  
+  <message id="22" operation="promptForPresentationSelection():CinemaTicketBookingSystem.Presentation">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="23"/>  
+  </message>
+</sequence-diagram>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.1.8" icons="true" automaticImage="PNG">  
+  <object id="1" language="java" name="CinemaTicketBookingSystem.Main" project="CinemaTicketBookingSystem" 
+    file="/CinemaTicketBookingSystem/CinemaTicketBookingSystem/Main.java" binary="false" label="main" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="129" y="0"/>    
+    <execution id="2">      
+      <position height="427" width="141" x="5" y="97"/>    
+    </execution>    
+    <execution id="4">      
+      <position height="318" width="141" x="5" y="139"/>    
+    </execution>  
+  </object>  
+  <object id="17" language="java" name="CinemaTicketBookingSystem.MovieSchedule" project="CinemaTicketBookingSystem" 
+    file="/CinemaTicketBookingSystem/CinemaTicketBookingSystem/MovieSchedule.java" binary="false" label="movieSchedule" 
+    type="class" autoSize="true">    
+    <position height="-1" width="-1" x="215" y="0"/>    
+    <execution id="8">      
+      <position height="21" width="141" x="150" y="167"/>    
+    </execution>    
+    <execution id="12">      
+      <position height="21" width="141" x="150" y="235"/>    
+    </execution>  
+  </object>  
+  <object id="18" language="java" name="CinemaTicketBookingSystem.Movie" project="CinemaTicketBookingSystem" 
+    file="/CinemaTicketBookingSystem/CinemaTicketBookingSystem/Movie.java" binary="false" label="movie" type="class" 
+    autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="10">      
+      <position height="21" width="141" x="295" y="193"/>    
+    </execution>  
+  </object>  
+  <object id="19" language="java" name="CinemaTicketBookingSystem.Customer" project="CinemaTicketBookingSystem" 
+    file="/CinemaTicketBookingSystem/CinemaTicketBookingSystem/Customer.java" binary="false" label="customer" 
+    type="class" autoSize="true">    
+    <position height="-1" width="-1" x="453" y="0"/>    
+    <execution id="14">      
+      <position height="126" width="141" x="440" y="277"/>    
+    </execution>  
+  </object>  
+  <object id="22" language="java" name="CinemaTicketBookingSystem.User" project="CinemaTicketBookingSystem" 
+    file="/CinemaTicketBookingSystem/CinemaTicketBookingSystem/User.java" binary="false" label="user" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="429" y="0"/>    
+    <execution id="21">      
+      <position height="84" width="141" x="585" y="298"/>    
+    </execution>    
+    <execution id="24">      
+      <position height="21" width="7" x="652" y="340"/>    
+    </execution>    
+    <execution id="16">      
+      <position height="21" width="141" x="585" y="415"/>    
+    </execution>    
+    <execution id="6">      
+      <position height="21" width="141" x="585" y="482"/>    
+    </execution>  
+  </object>  
+  <message id="3" operation="createMockData():void">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </message>  
+  <message id="5" operation="login():CinemaTicketBookingSystem.User">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="6"/>  
+  </message>  
+  <message id="7" operation="getInstance():CinemaTicketBookingSystem.MovieSchedule">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="8"/>  
+  </message>  
+  <message id="9" operation="Movie(java.lang.String,int)">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="10"/>  
+  </message>  
+  <message id="11" operation="addPresentationToSchedule(CinemaTicketBookingSystem.Movie,int,int,int,int,int):void">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="12"/>  
+  </message>  
+  <message id="13" operation="Customer(java.lang.String,java.lang.String)">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="14"/>  
+  </message>  
+  <message id="15" operation="addUser(CinemaTicketBookingSystem.User):void">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="16"/>  
+  </message>  
+  <message id="20" operation="User(java.lang.String,java.lang.String)">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="21"/>  
+  </message>  
+  <message id="23" operation="User()">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="24"/>  
+  </message>
+</sequence-diagram>
