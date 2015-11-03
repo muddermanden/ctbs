@@ -6,33 +6,33 @@ import java.util.Scanner;
 public class Utility {
 	
 	// the shared scanner object
-	public static Scanner scanner = new Scanner(System.in);
+	private static final Scanner scanner = new Scanner(System.in);
 	
 	public static int promptUserInputInteger(String message)
 	{
-		Scanner scanner = Utility.scanner;
-		int userInput = 0;
-
+		int input;
 		do
 		{
 			System.out.println(message);
+			
 			try
 			{
-				userInput = scanner.nextInt();
-
-				if (userInput > 0)
+				input = scanner.nextInt();
+				if (input > 0)
 				{
-					return userInput;
+					return input;
 				}
 				else
 				{
-					System.out.println("Please enter a positive number.");
+					
+					System.out.println("Please enter a positive number!");
 				}
 
 			}
 			catch (InputMismatchException e)
 			{
-				System.out.println("Please enter number.");
+				System.out.println("Please enter a number!");
+				scanner.next(); // clear the wrong input
 			}
 		}
 		while (true);
@@ -41,27 +41,28 @@ public class Utility {
 
 	public static String promptUserInputString(String message)
 	{
-		Scanner scanner;
 		String userInput;
 
 		do
 		{
-			System.out.println(message);
-
-			scanner = Utility.scanner;
-			userInput = scanner.nextLine();
-
-			if (userInput.length() > 0)
-			{
-				return userInput;
-			}
-			else
-			{
-				System.out.println("Please enter a string.");
+			try {
+				System.out.println(message);
+	
+				userInput = scanner.nextLine();
+	
+				if (userInput.length() > 0)
+				{
+					return userInput;
+				}
+				else
+				{
+					System.out.println("Please enter a string!");
+				}
+				// scanner.close();
+			} catch (Exception e) {
+				System.out.println(e.getStackTrace());
 			}
 		}
 		while (true);
 	}
-
-
 }

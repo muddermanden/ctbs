@@ -33,7 +33,7 @@ public class Main
 	}
 
 
-	public static void createMockData()
+	private static void createMockData()
 	{
 		// get the movie schedule instance
 		movieSchedule = MovieSchedule.getInstance();

@@ -9,7 +9,7 @@ public class Row
 	private ArrayList<Seat> seats;
 
 
-	Row(int rowNumber)
+	public Row(int rowNumber)
 	{
 		setRowNumber(rowNumber);
 		seats = new ArrayList<Seat>();
