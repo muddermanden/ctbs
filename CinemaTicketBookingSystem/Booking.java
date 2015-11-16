@@ -1,9 +1,11 @@
 package CinemaTicketBookingSystem;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Scanner;
 import java.util.UUID;
 
 public class Booking
@@ -270,6 +272,25 @@ public class Booking
 	private void setPresentation(Presentation presentation)
 	{
 		this.presentation = presentation;
+	}
+	
+	public static void readBookingInfo(String bookingReference) {
+		
+		// try to open the file if it exist
+		try {
+			String filename = bookingReference + ".txt";
+			File file = new File(filename);
+
+			Scanner scanner = new Scanner(file);
+			
+			while(scanner.hasNextLine()) {
+				String line = scanner.nextLine();
+				System.out.println(line);
+			}
+			
+		} catch (FileNotFoundException e) {
+			System.err.println("The booking was not found in the system.");
+		}
 	}
 
 }

@@ -9,6 +9,7 @@ public class Employee extends User
 	
 	public void checkBooking()
 	{
-		System.out.println("SES");
+		String bookingReference = Utility.promptUserInputString("Enter booking reference to look up");
+		Booking.readBookingInfo(bookingReference);
 	}
 }
