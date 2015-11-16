@@ -6,7 +6,8 @@ import java.util.Scanner;
 public class Utility {
 	
 	// the shared scanner object
-	private static final Scanner scanner = new Scanner(System.in);
+	private static final Scanner scannerInt = new Scanner(System.in);
+	private static final Scanner scannerText = new Scanner(System.in);
 	
 	public static int promptUserInputInteger(String message)
 	{
@@ -17,7 +18,7 @@ public class Utility {
 			
 			try
 			{
-				input = scanner.nextInt();
+				input = scannerInt.nextInt();
 				if (input > 0)
 				{
 					return input;
@@ -32,7 +33,7 @@ public class Utility {
 			catch (InputMismatchException e)
 			{
 				System.out.println("Please enter a number!");
-				scanner.next(); // clear the wrong input
+				scannerInt.next(); // clear the wrong input
 			}
 		}
 		while (true);
@@ -48,7 +49,7 @@ public class Utility {
 			try {
 				System.out.println(message);
 	
-				userInput = scanner.nextLine();
+				userInput = scannerText.nextLine();
 	
 				if (userInput.length() > 0)
 				{
@@ -58,7 +59,6 @@ public class Utility {
 				{
 					System.out.println("Please enter a string!");
 				}
-				// scanner.close();
 			} catch (Exception e) {
 				System.out.println(e.getStackTrace());
 			}
