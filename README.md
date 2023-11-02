@@ -1,27 +1,36 @@
-# Learning objectives
-## To achieve the grade 12, students should meet the following learning objectives with no or only minor mistakes or errors:
+# Learning Objectives
 
-> Develop a simple application through object oriented (OO) design and (OO)programming (1).
-> 
-> Use tools and techniques for producing simple application from a structured or unstructured specification (2).
->
-> Demonstrate the use of the concepts and fundamentals of object-oriented programming through the development of a simple application (3).
->
-> Demonstrate understanding of the concepts and fundamentals of object-oriented programming (4).
->
-> Be able to discuss and reflect about concrete code implementations and be able to identify business limitations to technical implementations (5)
->
-> Be able to communicate effectively about development methods, techniques and object oriented programming concepts to a wider audience (6).
+## Grade 12 Achievement Criteria
 
-Grade received: 12
+To achieve the grade 12, students should meet the following learning objectives with no or only minor mistakes or errors:
 
-> Language 	English
-> Course ECTS 	7.5 ECTS
-> Type 	Mandatory
-> Level 	Full Degree Master
-> Duration 	One Semester
+| No.  | Learning Objectives                                                                                       |
+|------|-----------------------------------------------------------------------------------------------------------|
+| 1.   | Develop a simple application through object-oriented (OO) design and (OO) programming.                  |
+| 2.   | Use tools and techniques for producing a simple application from a structured or unstructured specification.|
+| 3.   | Demonstrate the use of the concepts and fundamentals of object-oriented programming through the development of a simple application.|
+| 4.   | Demonstrate understanding of the concepts and fundamentals of object-oriented programming.               |
+| 5.   | Discuss and reflect on concrete code implementations and identify business limitations to technical implementations.|
+| 6.   | Communicate effectively about development methods, techniques, and object-oriented programming concepts to a wider audience.|
 
-# Exam project: Seat booking system
+## Grade Received: 12
+
+# Course Details
+
+| Field             | Information                      |
+|-------------------|----------------------------------|
+| School            | Copenhagen Business School (CBS) |
+| Course            | Object-Oriented Programming      |
+| Language          | English                          |
+| Course ECTS       | 7.5 ECTS                         |
+| Type              | Mandatory                        |
+| Level             | Full Degree Master               | 
+| Duration          | One Semester                     |
+
+
+# Exam project: Cinema Ticket Booking System (ctbs)
+
+Welcome to the Cinema Ticket Booking System (ctbs) application. This project demonstrates the mastery of object-oriented design and programming concepts, fulfilling the grade 12 achievement criteria. The application allows users to book tickets for movie presentations based on a schedule. Below is the console output showcasing the functionality of the Cinema Ticket Booking System:
 
 ```
 Movie Presentation Schedule:
