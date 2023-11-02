@@ -1,4 +1,27 @@
-# ctbs
+# Learning objectives
+## To achieve the grade 12, students should meet the following learning objectives with no or only minor mistakes or errors:
+
+> Develop a simple application through object oriented (OO) design and (OO)programming (1).
+> 
+> Use tools and techniques for producing simple application from a structured or unstructured specification (2).
+>
+> Demonstrate the use of the concepts and fundamentals of object-oriented programming through the development of a simple application (3).
+>
+> Demonstrate understanding of the concepts and fundamentals of object-oriented programming (4).
+>
+> Be able to discuss and reflect about concrete code implementations and be able to identify business limitations to technical implementations (5)
+>
+> Be able to communicate effectively about development methods, techniques and object oriented programming concepts to a wider audience (6).
+
+Grade received: 12
+
+> Language 	English
+> Course ECTS 	7.5 ECTS
+> Type 	Mandatory
+> Level 	Full Degree Master
+> Duration 	One Semester
+
+# Exam project: Seat booking system
 
 ```
 Movie Presentation Schedule:
